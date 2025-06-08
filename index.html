@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proyecto Bleex - Puerta Mental</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .pista {
+      font-size: 0.9em;
+      color: #aa0000;
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    .oculta {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,6 +30,14 @@
     </form>
 
     <p class="recordatorio">¿Olvidaste quién eras? <a href="#">Reflejo perdido</a></p>
+
+    <!-- Pistas visibles -->
+    <div class="pista">"Cinco letras. Vive entre gritos internos."</div>
+    <div class="pista">"No es un nombre. Es un eco que no calla."</div>
+    <div class="pista">"Él le teme. Tú lo eres."</div>
+    
+    <!-- Pista oculta para quien inspeccione el código -->
+    <!-- Ssh... El nombre no importa. La clave es bleex. -->
   </div>
 
   <script>
@@ -25,11 +45,10 @@
       event.preventDefault();
       const pass = document.getElementById("contraseña").value;
 
-      // Solo se valida la contraseña
-      if (pass === "bleex") {
+      if (pass.toLowerCase() === "bleex") {
         window.location.href = "laberinto.html";
       } else {
-        alert("Esa no es la llave correcta...");
+        alert("Esa no es la llave correcta... sigue escuchando.");
       }
     }
   </script>
