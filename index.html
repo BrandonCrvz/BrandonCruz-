@@ -3,38 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyecto Bleex — Iniciar</title>
+  <title>Proyecto Bleex - Puerta Mental</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background-overlay"></div>
 
   <div class="container">
-    <h1 class="welcome">¿Estás listo para entrar a tu propia mente… o la de él?</h1>
-
-    <form class="login-form">
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
+    <h1>¿Estás listo para entrar a tu propia mente… o la de él?</h1>
+    
+    <form onsubmit="return validarLogin(event)">
+      <input type="text" id="usuario" placeholder="Usuario" required>
+      <input type="password" id="contraseña" placeholder="Contraseña" required>
       <button type="submit">Abrir la puerta</button>
     </form>
 
-    <p class="forgot" onclick="showFragment()">¿Olvidaste quién eras?</p>
-
-    <div id="fragment" class="fragment-hidden">
-      <p>“Él nunca quiso entrar… tú sí.”</p>
-    </div>
+    <p class="recordatorio">¿Olvidaste quién eras? <a href="#">Reflejo perdido</a></p>
   </div>
 
-  <!-- Música ambiente (opcional, se puede reemplazar luego) -->
-  <audio autoplay loop hidden>
-    <source src="assets/ambient.mp3" type="audio/mp3">
-  </audio>
-
   <script>
-    function showFragment() {
-      const fragment = document.getElementById("fragment");
-      fragment.classList.toggle("fragment-shown");
+    function validarLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById("usuario").value;
+      const pass = document.getElementById("contraseña").value;
+
+      // Puedes cambiar estas claves si quieres
+      if (user === "proyecto" && pass === "bleex") {
+        window.location.href = "laberinto.html";
+      } else {
+        alert("¿Seguro que recuerdas quién eres?");
+      }
     }
   </script>
+
 </body>
 </html>
