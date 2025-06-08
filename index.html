@@ -12,7 +12,7 @@
     <h1>¿Estás listo para entrar a tu propia mente… o la de él?</h1>
     
     <form onsubmit="return validarLogin(event)">
-      <input type="text" id="usuario" placeholder="Usuario" required>
+      <input type="text" id="usuario" placeholder="Escribe tu nombre..." required>
       <input type="password" id="contraseña" placeholder="Contraseña" required>
       <button type="submit">Abrir la puerta</button>
     </form>
@@ -23,14 +23,13 @@
   <script>
     function validarLogin(event) {
       event.preventDefault();
-      const user = document.getElementById("usuario").value;
       const pass = document.getElementById("contraseña").value;
 
-      // Puedes cambiar estas claves si quieres
-      if (user === "proyecto" && pass === "bleex") {
+      // Solo se valida la contraseña
+      if (pass === "bleex") {
         window.location.href = "laberinto.html";
       } else {
-        alert("¿Seguro que recuerdas quién eres?");
+        alert("Esa no es la llave correcta...");
       }
     }
   </script>
