@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -43,6 +43,11 @@
       box-shadow: 0 0 12px #ff4fa3;
       border: 2px solid #ff4fa3;
       background: #440022;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .bio-image:hover {
+      box-shadow: 0 0 20px #ff79c4;
+      transform: scale(1.02);
     }
     .bio-text {
       flex: 1;
@@ -77,6 +82,7 @@
     <h1>Has entrado al Laberinto Mental</h1>
     <p>Explora las puertas, los artefactos y las voces…</p>
     <p>°•|•°</p>
+
     <!-- Biografía Bleex -->
     <section class="bio-section">
       <img src="assets/bleex.jpg" alt="Imagen de Bleex" class="bio-image" />
@@ -126,12 +132,24 @@
       </div>
     </section>
 
-    <!-- Botón para ir a Artefactos -->
-<div style="text-align:center;">
-  <a href="artefactos.html" class="boton-bleex">⚙ Artefactos del Forastero</a>
-  <br/><br/>
-  <a href="artefactos_bleex.html" class="boton-bleex">🩸 Artefactos de Bleex</a>
-</div>
+    <!-- Botones de Artefactos -->
+    <div style="text-align:center;">
+      <a href="artefactos.html" class="boton-bleex">⚙ Artefactos del Forastero</a>
+      <br/><br/>
+      <a href="artefactos_bleex.html" class="boton-bleex">🩸 Artefactos de Bleex</a>
+    </div>
+
+    <!-- Sección del Mapa -->
+    <section class="bio-section" style="flex-direction: column; align-items: center;">
+      <h2>Mapa</h2>
+      <img src="assets/mapa.jpg" alt="Mapa del Laberinto Mental" class="bio-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; margin-bottom: 20px;" />
+      <p class="bio-text" style="text-align: center;">
+        Este mapa no tiene rumbo ni dirección clara. Sus líneas cambian, se desvanecen o aparecen según quien lo observe. Solo aquel que haya despertado entre sombras y comprenda el eco del caos podrá leerlo realmente. 
+        <br/><br/>
+        Es más que un dibujo: es un reflejo del laberinto interior, una guía muda que revela caminos al alma que se atreva a buscar su verdad.
+      </p>
+    </section>
+
   </div>
 </body>
 </html>
