@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Papel de Luz - Fucsia Amanecer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #1a0e1a;
+      color: #fdddfd;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff66cc;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+    }
+
+    .artefacto {
+      margin-bottom: 60px;
+      background-color: #2e1c2e;
+      border: 1px solid #4b2b4b;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+    }
+
+    .artefacto img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 20px #ff4fa3;
+    }
+
+    .artefacto h2 {
+      color: #ff66cc;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .artefacto p {
+      font-size: 16px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .papel-luz {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .mensaje-secreto {
+      margin-top: 15px;
+      background-color: #1a0a1a;
+      border: 1px dashed #ff99cc;
+      color: #fff;
+      padding: 20px;
+      font-size: 20px;
+      border-radius: 8px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+    }
+
+    .boton-revelar {
+      background-color: #ff4fa3;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .boton-revelar:hover {
+      background-color: #ff80c1;
+    }
+
+    .boton-bleex {
+      display: block;
+      text-align: center;
+      background-color: #ff66cc;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      width: fit-content;
+      margin: 40px auto 0;
+      transition: background 0.3s ease;
+    }
+
+    .boton-bleex:hover {
+      background-color: #ff99cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>El Papel de Luz</h1>
+
+  <div class="artefacto">
+    <img src="assets/artefactos/papel-luz.jpg" alt="El Papel de Luz" />
+    <h2>🌸 Artefacto de los Fucsia Amanecer</h2>
+    <p>
+Forma:
+
+Un pequeño trozo de papel doblado en tres partes. A simple vista parece en blanco, pero si se expone a una fuente de calor (como una lámpara, la mano o una vela a distancia), revela una palabra escrita con tinta invisible. Esa palabra cambia con cada persona: puede ser "coraje", "nombre", "perdón", "presente", "grita", etc.
+
+Simbolismo:
+
+El Papel de Luz representa la idea de que cada oyente es un testigo y un aliado silencioso del protagonista. Aunque no pueden entrar en su mente, pueden sostener un recuerdo, una palabra, una emoción que lo ancla al mundo real. Es un canal simbólico entre el protagonista y el oyente.
+
+Mientras el protagonista cae, hay personas afuera que todavía recuerdan su nombre.
+    </p>
+
+    <div class="papel-luz">
+      <button class="boton-revelar" onclick="revelarMensaje()">Revelar palabra secreta</button>
+      <div class="mensaje-secreto" id="mensajeSecreto"></div>
+    </div>
+  </div>
+
+  <!-- Botón para volver -->
+  <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
+
+  <script>
+    function revelarMensaje() {
+      const palabras = ["coraje", "presente", "nombre", "grita", "espera", "abraza", "no olvides", "perdón", "acepta", "lucha", "vuelve", "camina", "te escucho"];
+      const mensaje = palabras[Math.floor(Math.random() * palabras.length)];
+      const div = document.getElementById("mensajeSecreto");
+      div.innerText = `"${mensaje}"`;
+      div.style.display = "block";
+    }
+  </script>
+</body>
+</html>
