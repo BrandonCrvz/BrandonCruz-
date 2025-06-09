@@ -4,53 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Artefactos de Bleex</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #1a0e0e;
+      color: #e0dede;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e53935;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+    }
+
+    .artefacto {
+      margin-bottom: 60px;
+      background-color: #2e1c1c;
+      border: 1px solid #3b2b2b;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(255, 30, 30, 0.3);
+    }
+
+    .artefacto img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .artefacto h2 {
+      color: #f44336;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .artefacto p {
+      font-size: 16px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .boton-bleex {
+      display: block;
+      text-align: center;
+      background-color: #e53935;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      width: fit-content;
+      margin: 0 auto;
+      transition: background 0.3s ease;
+    }
+
+    .boton-bleex:hover {
+      background-color: #ff6f60;
+    }
+  </style>
 </head>
-<body class="artefactos-bleex">
-  <div class="container">
-    <h1 class="titulo-seccion">⚙ Artefactos de Bleex</h1>
-    <p class="intro-text">Objetos nacidos del caos, creados para manipular, dividir y destruir desde adentro. No todos deberían ser encontrados…</p>
+<body>
+  <h1>Artefactos de Bleex</h1>
 
-    <!-- 🔴 Artefacto 1: El Lente Roto -->
-    <div class="artefacto">
-      <img src="assets/artefacto1.png" alt="El Lente Roto" class="artefacto-img" />
-      <div class="artefacto-texto">
-        <h2>🩸 El Lente Roto</h2>
-        <p><strong>Forma:</strong> Un monocular antiguo, como de explorador, con el cristal principal partido.</p>
-        <p><strong>Función simbólica:</strong> Todo lo que el forastero ve a través de él se distorsiona. Resalta el caos, la traición y la inseguridad. Proyecta versiones alternativas de la realidad que hacen dudar de todo: de las personas, de la memoria, incluso de sí mismo.</p>
-        <p><strong>Usado por Bleex:</strong> Bleex no lo sostiene; el lente flota cuando él está cerca. A veces aparece en sueños o como símbolo visual sobre un ojo.</p>
-        <p class="frase">"La verdad es lo que tú quieras ver... o lo que yo te deje ver."</p>
-      </div>
-    </div>
+  <div class="artefacto">
+    <img src="assets/artefactos/lente-roto.jpg" alt="El Lente Roto" />
+    <h2>🩸 El Lente Roto</h2>
+    <p>
+Forma: Un monocular antiguo, como de explorador, con el cristal principal partido.
 
-    <!-- 🕷 Artefacto 2: La Cicatriz de Hilo -->
-    <div class="artefacto">
-      <img src="assets/artefacto2.png" alt="La Cicatriz de Hilo" class="artefacto-img" />
-      <div class="artefacto-texto">
-        <h2>🕷 La Cicatriz de Hilo</h2>
-        <p><strong>Forma:</strong> Un brazalete de hilos oscuros, enredados con espinas y fragmentos metálicos.</p>
-        <p><strong>Función simbólica:</strong> A medida que el forastero cae en pensamientos negativos, esta cicatriz aparece en su brazo mental. Representa las heridas que Bleex abre para entrar. A veces sangra, otras veces lo aprieta hasta inmovilizarlo emocionalmente.</p>
-        <p><strong>Usado por Bleex:</strong> No lo porta directamente, pero deja esta marca en quienes ya ha tocado profundamente.</p>
-        <p class="frase">"No necesito estar dentro de ti... si ya estoy debajo de tu piel."</p>
-      </div>
-    </div>
+Función simbólica: Todo lo que el protagonista ve a través de él se distorsiona. Resalta el caos, la traición y la inseguridad. El lente proyecta versiones alternativas de la realidad que hacen dudar de todo: de las personas, de la memoria, incluso de sí mismo.
 
-    <!-- 🗝 Artefacto 3: La Llave del Eco Inverso -->
-    <div class="artefacto">
-      <img src="assets/artefacto3.png" alt="La Llave del Eco Inverso" class="artefacto-img" />
-      <div class="artefacto-texto">
-        <h2>🗝 La Llave del Eco Inverso</h2>
-        <p><strong>Forma:</strong> Una llave oxidada, larga, con un diseño imposible (al girarla, los sonidos se invierten: risas se vuelven gritos, palabras se vuelven susurros).</p>
-        <p><strong>Función simbólica:</strong> Bleex la usa para abrir puertas mentales que el forastero había cerrado. Con ella, libera traumas reprimidos o activa recuerdos falsos.</p>
-        <p><strong>Usado por Bleex:</strong> Siempre está colgada cerca, flotando detrás de él en forma abstracta. También puede aparecer en visuales como símbolo central.</p>
-        <p class="frase">"Todo lo que cerraste... yo puedo volver a abrirlo."</p>
-      </div>
-    </div>
+Usado por Bleex: Bleex no lo sostiene; el lente flota cuando él está cerca. A veces aparece en sueños o como símbolo visual sobre un ojo.
 
-    <!-- Botón para volver -->
-    <div style="margin-top: 40px;">
-      <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
-    </div>
+Frase clave: "La verdad es lo que tú quieras ver... o lo que yo te deje ver."
+    </p>
+  </div>
+
+  <div class="artefacto">
+    <img src="assets/artefactos/cicatriz-hilo.jpg" alt="La Cicatriz de Hilo" />
+    <h2>🕷 La Cicatriz de Hilo</h2>
+    <p>
+Forma: Un brazalete de hilos oscuros, enredados con espinas y fragmentos metálicos.
+
+Función simbólica: A medida que el protagonista cae en pensamientos negativos, esta cicatriz aparece en su brazo mentalmente. Representa las heridas que Bleex abre para entrar. A veces sangra, otras veces lo aprieta hasta inmovilizarlo emocionalmente.
+
+Usado por Bleex: No lo porta directamente, pero deja esta marca en quienes ya ha tocado profundamente.
+
+Frase clave: "No necesito estar dentro de ti... si ya estoy debajo de tu piel."
+    </p>
+  </div>
+
+  <div class="artefacto">
+    <img src="assets/artefactos/llave-eco-inverso.jpg" alt="La Llave del Eco Inverso" />
+    <h2>🗝 La Llave del Eco Inverso</h2>
+    <p>
+Forma: Una llave oxidada, larga, con un diseño imposible (al girarla, los sonidos se invierten: risas se vuelven gritos, palabras se vuelven susurros).
+
+Función simbólica: Bleex la usa para abrir puertas mentales que el protagonista había cerrado. Con ella, libera traumas reprimidos o activa recuerdos falsos.
+
+Usado por Bleex: Siempre está colgada cerca, flotando detrás de él en forma abstracta. También puede aparecer en visuales como símbolo central.
+
+Frase clave: "Todo lo que cerraste... yo puedo volver a abrirlo."
+    </p>
+  </div>
+
+  <!-- Botón para volver -->
+  <div style="margin-top: 40px;">
+    <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
   </div>
 </body>
 </html>
