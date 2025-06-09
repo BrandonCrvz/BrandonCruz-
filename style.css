@@ -1,74 +1,60 @@
-/* Estilos generales */
+/* Estilo anterior restaurado */
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1a0000, #300000);
-  color: #f4f4f4;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #ffffff;
 }
 
-/* Contenedor principal */
 .container {
   text-align: center;
   padding: 60px 20px;
 }
 
-/* Títulos */
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffdddd;
-  text-shadow: 0 0 10px #ff4444;
+  color: #f8f8f8;
 }
 
-h2 {
-  color: #ffaaaa;
-  margin-top: 40px;
-  font-size: 1.8rem;
-}
-
-/* Párrafos */
 p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* Botón animado estilo Bleex */
 .boton-bleex {
   display: inline-block;
   padding: 15px 30px;
   font-size: 1.1rem;
   color: #fff;
-  background: linear-gradient(145deg, #620000, #8b0000);
+  background: linear-gradient(145deg, #444, #222);
   border: none;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 0 10px #8b0000;
+  box-shadow: 0 0 10px #555;
   transition: all 0.3s ease-in-out;
 }
 
 .boton-bleex:hover {
   transform: scale(1.05);
-  background: linear-gradient(145deg, #8b0000, #b30000);
-  box-shadow: 0 0 15px #ff0000;
+  background: linear-gradient(145deg, #666, #333);
+  box-shadow: 0 0 15px #999;
 }
 
-/* Login Form */
 .login-container {
   max-width: 400px;
   margin: 100px auto;
-  background-color: rgba(20, 0, 0, 0.8);
+  background-color: #181818;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 0 20px #8b0000;
+  box-shadow: 0 0 20px #333;
 }
 
 .login-container h1 {
-  color: #ff9999;
+  color: #fff;
 }
 
 .login-container input[type="text"],
@@ -78,13 +64,13 @@ p {
   margin: 15px 0;
   border: none;
   border-radius: 8px;
-  background-color: #2b0000;
+  background-color: #2a2a2a;
   color: #fff;
 }
 
 .login-container button {
   padding: 10px 25px;
-  background-color: #990000;
+  background-color: #444;
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -94,60 +80,59 @@ p {
 }
 
 .login-container button:hover {
-  background-color: #cc0000;
-  box-shadow: 0 0 10px #ff3333;
+  background-color: #666;
+  box-shadow: 0 0 10px #888;
 }
 
-/* Imagen de artefacto */
 .artefacto {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   padding: 20px;
   margin: 30px auto;
   max-width: 800px;
-  box-shadow: 0 0 15px #400000;
+  box-shadow: 0 0 15px #222;
+  text-align: left;
 }
 
 .artefacto img {
   max-width: 250px;
   border-radius: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 0 12px #aa0000;
+  box-shadow: 0 0 12px #444;
 }
 
 .artefacto h3 {
-  color: #ff9999;
+  color: #ccc;
   margin-top: 10px;
   font-size: 1.5rem;
 }
 
-/* Biografía */
 .bio-section {
   margin-top: 60px;
   padding: 20px;
-  background-color: rgba(60, 0, 0, 0.7);
+  background-color: #1e1e1e;
   border-radius: 12px;
-  box-shadow: 0 0 10px #660000;
+  box-shadow: 0 0 10px #333;
+  text-align: center;
 }
 
 .bio-section img {
   max-width: 200px;
   border-radius: 50%;
   margin-bottom: 15px;
-  box-shadow: 0 0 10px #bb0000;
+  box-shadow: 0 0 10px #444;
 }
 
 .bio-section h2 {
-  color: #ffaaaa;
+  color: #eee;
 }
 
 .bio-section p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #f8dada;
+  color: #ccc;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
   .boton-bleex {
     font-size: 1rem;
@@ -167,3 +152,11 @@ p {
     max-width: 150px;
   }
 }
+
+
+¡Listo! He restaurado el diseño anterior completo, incluyendo el estilo del inicio de sesión, los botones, las biografías, artefactos y todo lo demás con la estética que te gustaba. Asegúrate de guardar este nuevo style.css en tu carpeta correctamente y que esté enlazado bien en cada página con:
+
+<link rel="stylesheet" href="style.css" />
+
+Si algo aún no se ve bien, me avisas y te ayudo a corregirlo al instante.
+
