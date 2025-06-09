@@ -1,199 +1,129 @@
-body {
-  background-color: #120505;
-  color: #f5f5f5;
-  font-family: 'Courier New', monospace;
-  background-image: url('assets/fondo-laberinto.jpg');
-  background-size: cover;
-  background-position: center;
+/* Fondo general oscuro con rojo tenue */
+body.login {
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(160deg, #2c0000, #0a0a0a);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.65);
-  max-width: 800px;
-  margin: 100px auto;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
-}
-
-h1 {
-  font-size: 2.8em;
-  margin-bottom: 10px;
-  color: #ff5959;
-  text-shadow: 0 0 10px red;
-}
-
-p {
-  font-size: 1.2em;
-  line-height: 1.5;
-  margin: 10px 0;
-}
-
-.boton-bleex {
-  display: inline-block;
-  background: linear-gradient(to right, #6a00ff, #ff0066);
-  padding: 14px 30px;
-  border-radius: 50px;
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(255, 0, 120, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.boton-bleex:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(255, 0, 120, 0.9);
-}
-
-/* Biografías */
-.biografia {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 25px;
-  margin: 40px auto;
-  max-width: 900px;
-  color: #f5f5f5;
-  backdrop-filter: blur(10px);
-}
-
-.biografia h2 {
-  font-size: 1.8em;
-  color: #ff88ff;
-  margin-bottom: 12px;
-}
-
-.biografia p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* Artefactos */
-.artefacto {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Contenedor centrado */
+.login-box {
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  margin: 30px auto;
-  max-width: 900px;
-  border-radius: 12px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.artefacto img {
-  width: 180px;
-  height: auto;
-  border-radius: 8px;
-  border: 2px solid #ff00aa;
-}
-
-.artefacto-texto {
-  flex: 1;
-  min-width: 260px;
-}
-
-.artefacto-texto h3 {
-  font-size: 1.4em;
-  color: #f963c3;
-}
-
-.artefacto-texto p {
-  font-size: 1em;
-  line-height: 1.5;
-  color: #ddd;
-}
-
-/* Redes sociales */
-.redes-container {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.btn-red {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-family: 'Courier New', monospace;
-  transition: background 0.3s ease;
-}
-
-.btn-red img {
-  width: 28px;
-  height: 28px;
-}
-
-.btn-red span {
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.btn-red:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.btn-red:hover span {
-  color: #fceaff;
-}
-
-/* Estilo para el login */
-.login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ff0000;
   text-align: center;
-  box-shadow: 0 0 20px rgba(255, 0, 120, 0.4);
+  width: 350px;
 }
 
-.login-container h2 {
-  color: #ff5fc0;
-  margin-bottom: 20px;
-  font-size: 1.8em;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: 100%;
+/* Estilo de campos de entrada */
+.login-box input {
+  width: 90%;
   padding: 12px;
   margin: 10px 0;
   border: none;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: #1b1b1b;
   color: white;
-  font-size: 1em;
+  font-size: 14px;
 }
 
-.login-container button {
-  padding: 12px 30px;
+/* Botón de iniciar sesión */
+.login-box button {
+  background-color: #880808;
+  color: white;
+  padding: 12px 25px;
   border: none;
-  border-radius: 30px;
-  background: linear-gradient(to right, #ff0080, #7928ca);
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
-.login-container button:hover {
+.login-box button:hover {
+  background-color: #ff1f1f;
+}
+
+/* Estilo para botones de redes */
+.redes {
+  margin-top: 20px;
+}
+
+.redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #1b1b1b;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.redes a:hover {
+  background-color: #292929;
+}
+
+.redes img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* 🔮 Botón a Artefactos */
+.boton-bleex {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #ff0000, #440000);
+  color: white;
+  font-weight: bold;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #ff1f1f;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.boton-bleex:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 0, 120, 0.6);
+  background: linear-gradient(145deg, #660000, #220000);
+}
+
+/* Estilo para el container en el laberinto */
+body.laberinto {
+  background: linear-gradient(160deg, #1e0000, #000000);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Texto de redes */
+.redes span {
+  font-size: 14px;
+  color: #ccc;
+  margin-left: 5px;
+}
+
+/* Ajustes responsive */
+@media (max-width: 500px) {
+  .login-box {
+    width: 90%;
+  }
+  .redes a {
+    flex-direction: column;
+  }
+  .redes img {
+    margin: 0 0 5px 0;
+  }
 }
