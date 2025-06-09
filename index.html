@@ -2,44 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>¡FORASTEROS!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Bleex - Inicio de Sesión</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="login">
-
-  <!-- 🔊 Sonido ambiente de leña ardiendo -->
-  <audio autoplay loop>
-    <source src="fuego.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-  </audio>
-
   <div class="login-container">
-    <h1>°•|•° Bien venidos a la puerta °•|•°</h1>
-    <p class="subtitulo">¿listo para entrar en tu propia mente?</p>
+    <h1>Proyecto Bleex</h1>
+    <p class="subtitulo">Inicia sesión para entrar al laberinto mental</p>
 
-    <form action="laberinto.html" method="post" class="login-form">
-      <input type="text" name="usuario" placeholder="Tu Nombre" required />
-      <input type="password" name="contrasena" placeholder="Llave de 5 espigas" required />
-      <button type="submit">Abrir puerta</button>
+    <form class="login-form" id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <button type="submit">Entrar</button>
     </form>
 
     <div class="social-section">
-      <div class="social-button">
-        <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank">
-          <img src="spotify.png" alt="Spotify" />
-        </a>
-        <p>Explora mi música en Spotify siente la esencia del forastero.</p>
-      </div>
+      <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="social-button" title="Escucha mi música en Spotify">
+        <img src="assets/spotify-icon.png" alt="Spotify" />
+        <p>Sumérgete en la música que da vida a Proyecto Bleex.</p>
+      </a>
 
-      <div class="social-button">
-        <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank">
-          <img src="youtube.png" alt="YouTube" />
-        </a>
-        <p>Sumérgete en el universo en YouTube y atraviesa los ecos.</p>
-      </div>
+      <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="social-button" title="Visita mi canal de YouTube">
+        <img src="assets/youtube-icon.png" alt="YouTube" />
+        <p>Descubre los videos y proyectos detrás de la historia.</p>
+      </a>
     </div>
   </div>
 
+  <audio autoplay loop volume="0.3" id="backgroundSound">
+    <source src="assets/fuego.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      if(pass.toLowerCase() === 'bleex'){
+        alert(`Bienvenido, ${user}.`);
+        window.location.href = 'laberinto.html';
+      } else {
+        alert('Contraseña incorrecta. Intenta de nuevo.');
+      }
+    });
+
+    // Ajustar volumen del audio en código (por si el atributo volume no funciona en todos los navegadores)
+    const audio = document.getElementById('backgroundSound');
+    audio.volume = 0.2; // Volumen suave
+  </script>
 </body>
 </html>
