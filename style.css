@@ -54,3 +54,61 @@ button:hover {
   color: #ff4d4d;
   text-decoration: underline;
 }
+/* Botón principal con estilo oscuro y rojo neón */
+.btn-artefactos {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3c3c;
+  background: linear-gradient(45deg, #330000, #660000);
+  border: 2px solid #ff3c3c;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 8px #ff3c3c88;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Efecto de brillo animado */
+.btn-artefactos::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #ff3c3c55, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+/* Al pasar el cursor, el botón brilla */
+.btn-artefactos:hover {
+  background: linear-gradient(45deg, #660000, #ff0000);
+  box-shadow: 0 0 15px #ff3c3ccc, 0 0 30px #ff3c3c99;
+  color: #fff;
+}
+
+/* Brillo animado */
+.btn-artefactos:hover::before {
+  opacity: 1;
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.7;
+  }
+}
