@@ -1,129 +1,91 @@
-/* Fondo general oscuro con rojo tenue */
 body.login {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(160deg, #2c0000, #0a0a0a);
+  padding: 0;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-/* Contenedor centrado */
-.login-box {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
+.login-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 15px #ff0000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   text-align: center;
-  width: 350px;
+  max-width: 400px;
+  width: 90%;
 }
 
-/* Estilo de campos de entrada */
-.login-box input {
+.login-container h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.login-container .subtitulo {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
   width: 90%;
   padding: 12px;
   margin: 10px 0;
   border: none;
   border-radius: 10px;
-  background-color: #1b1b1b;
-  color: white;
-  font-size: 14px;
+  background: #333;
+  color: #fff;
 }
 
-/* Botón de iniciar sesión */
-.login-box button {
-  background-color: #880808;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
-}
-
-.login-box button:hover {
-  background-color: #ff1f1f;
-}
-
-/* Estilo para botones de redes */
-.redes {
-  margin-top: 20px;
-}
-
-.redes a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 8px 0;
+.login-form button {
+  width: 95%;
   padding: 12px;
+  margin-top: 15px;
+  background: #7f5af0;
+  border: none;
   border-radius: 10px;
-  background-color: #1b1b1b;
-  text-decoration: none;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.redes a:hover {
-  background-color: #292929;
+.login-form button:hover {
+  background: #624de0;
 }
 
-.redes img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+.social-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* 🔮 Botón a Artefactos */
-.boton-bleex {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(145deg, #ff0000, #440000);
-  color: white;
-  font-weight: bold;
-  border-radius: 14px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #ff1f1f;
-  transition: transform 0.3s ease, background 0.3s ease;
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
 }
 
-.boton-bleex:hover {
-  transform: scale(1.05);
-  background: linear-gradient(145deg, #660000, #220000);
+.social-button img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 5px white);
+  transition: transform 0.3s ease;
 }
 
-/* Estilo para el container en el laberinto */
-body.laberinto {
-  background: linear-gradient(160deg, #1e0000, #000000);
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  padding: 50px;
+.social-button img:hover {
+  transform: scale(1.1);
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Texto de redes */
-.redes span {
-  font-size: 14px;
-  color: #ccc;
-  margin-left: 5px;
-}
-
-/* Ajustes responsive */
-@media (max-width: 500px) {
-  .login-box {
-    width: 90%;
-  }
-  .redes a {
-    flex-direction: column;
-  }
-  .redes img {
-    margin: 0 0 5px 0;
-  }
+.social-button p {
+  font-size: 13px;
+  color: #ddd;
+  max-width: 220px;
 }
