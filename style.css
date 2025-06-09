@@ -1,8 +1,9 @@
+/* General */
 body.login {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -10,47 +11,59 @@ body.login {
   height: 100vh;
 }
 
+/* Contenedor principal */
 .login-container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(127, 90, 240, 0.6);
   text-align: center;
   max-width: 400px;
   width: 90%;
 }
 
+/* Títulos */
 .login-container h1 {
-  margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
 }
 
 .login-container .subtitulo {
-  font-size: 14px;
+  font-size: 1rem;
+  color: #bbb;
   margin-bottom: 30px;
-  color: #ccc;
 }
 
+/* Formulario */
 .login-form input[type="text"],
 .login-form input[type="password"] {
-  width: 90%;
-  padding: 12px;
+  width: 100%;
+  padding: 14px 15px;
   margin: 10px 0;
   border: none;
-  border-radius: 10px;
-  background: #333;
-  color: #fff;
+  border-radius: 12px;
+  background: #1f1c3c;
+  color: #eee;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  background: #3e35a8;
+  outline: none;
 }
 
 .login-form button {
-  width: 95%;
-  padding: 12px;
-  margin-top: 15px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
   background: #7f5af0;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -59,33 +72,43 @@ body.login {
   background: #624de0;
 }
 
+/* Sección social */
 .social-section {
-  margin-top: 30px;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  align-items: flex-start;
 }
 
+/* Botones sociales */
 .social-button {
   display: flex;
   align-items: center;
   gap: 15px;
-  text-align: left;
+  text-decoration: none;
+  color: #ddd;
+  background: #1f1c3c;
+  padding: 12px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-button:hover {
+  background: #3e35a8;
+  box-shadow: 0 0 20px #7f5af0;
 }
 
 .social-button img {
   width: 40px;
   height: 40px;
-  filter: drop-shadow(0 0 5px white);
-  transition: transform 0.3s ease;
-}
-
-.social-button img:hover {
-  transform: scale(1.1);
+  filter: drop-shadow(0 0 3px white);
+  flex-shrink: 0;
 }
 
 .social-button p {
-  font-size: 13px;
-  color: #ddd;
-  max-width: 220px;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin: 0;
 }
