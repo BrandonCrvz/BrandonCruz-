@@ -1,162 +1,133 @@
-/* Estilo anterior restaurado */
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  background-color: #1a0000;
+  color: #ff4d4d;
+  background-image: radial-gradient(circle, #330000 0%, #1a0000 100%);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #f8f8f8;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.boton-bleex {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  color: #fff;
-  background: linear-gradient(145deg, #444, #222);
-  border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #555;
-  transition: all 0.3s ease-in-out;
-}
-
-.boton-bleex:hover {
-  transform: scale(1.05);
-  background: linear-gradient(145deg, #666, #333);
-  box-shadow: 0 0 15px #999;
-}
-
-.login-container {
   max-width: 400px;
   margin: 100px auto;
-  background-color: #181818;
+  text-align: center;
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #333;
-}
-
-.login-container h1 {
-  color: #fff;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: 90%;
-  padding: 10px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 8px;
-  background-color: #2a2a2a;
-  color: #fff;
-}
-
-.login-container button {
-  padding: 10px 25px;
-  background-color: #444;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.login-container button:hover {
-  background-color: #666;
-  box-shadow: 0 0 10px #888;
-}
-
-.artefacto {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 800px;
-  box-shadow: 0 0 15px #222;
-  text-align: left;
-}
-
-.artefacto img {
-  max-width: 250px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ff4d4d;
   border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 12px #444;
+  box-shadow: 0 0 10px #ff4d4d88;
 }
 
-.artefacto h3 {
-  color: #ccc;
-  margin-top: 10px;
-  font-size: 1.5rem;
+input {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px;
+  background: #000;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  border-radius: 5px;
 }
 
-.bio-section {
-  margin-top: 60px;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #333;
+button {
+  padding: 10px 20px;
+  background: #ff4d4d;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff0000;
+}
+
+.recordatorio {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.recordatorio a {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+
+/* Fondo y texto para la página laberinto */
+body.laberinto {
+  background: radial-gradient(circle at center, #2b0000, #0a0000 80%);
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 40px;
   text-align: center;
 }
 
-.bio-section img {
-  max-width: 200px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  box-shadow: 0 0 10px #444;
+/* Contenedor para centrar contenido */
+.container {
+  max-width: 600px;
+  margin: auto;
 }
 
-.bio-section h2 {
-  color: #eee;
+/* Botón principal con estilo oscuro y rojo neón */
+.btn-artefactos {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3c3c;
+  background: linear-gradient(45deg, #330000, #660000);
+  border: 2px solid #ff3c3c;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 8px #ff3c3c88;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  text-decoration: none; /* Quita el subrayado */
 }
 
-.bio-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
+/* Efecto de brillo animado */
+.btn-artefactos::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #ff3c3c55, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 30px;
 }
 
-@media screen and (max-width: 768px) {
-  .boton-bleex {
-    font-size: 1rem;
-    padding: 12px 20px;
-  }
-
-  .artefacto img {
-    max-width: 90%;
-  }
-
-  .login-container {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .bio-section img {
-    max-width: 150px;
-  }
+/* Al pasar el cursor, el botón brilla */
+.btn-artefactos:hover {
+  background: linear-gradient(45deg, #660000, #ff0000);
+  box-shadow: 0 0 15px #ff3c3ccc, 0 0 30px #ff3c3c99;
+  color: #fff;
 }
 
+/* Brillo animado */
+.btn-artefactos:hover::before {
+  opacity: 1;
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+}
 
-¡Listo! He restaurado el diseño anterior completo, incluyendo el estilo del inicio de sesión, los botones, las biografías, artefactos y todo lo demás con la estética que te gustaba. Asegúrate de guardar este nuevo style.css en tu carpeta correctamente y que esté enlazado bien en cada página con:
-
-<link rel="stylesheet" href="style.css" />
-
-Si algo aún no se ve bien, me avisas y te ayudo a corregirlo al instante.
-
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.7;
+  }
+}
