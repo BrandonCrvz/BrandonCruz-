@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyecto Bleex - Puerta Mental</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .pista {
-      font-size: 0.9em;
-      color: #aa0000;
-      text-align: center;
-      margin-top: 20px;
-      font-style: italic;
-    }
-    .oculta {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ingreso al Laberinto</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <audio autoplay loop volume="0.4">
+    <source src="fuego.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
 
   <div class="container">
-    <h1>¿Estás listo para entrar en tu propia mente?</h1>
-    
-    <form onsubmit="return validarLogin(event)">
-      <input type="text" id="usuario" placeholder="Escribe tu nombre..." required>
-      <input type="password" id="contraseña" placeholder="Contraseña" required>
-      <button type="submit">Abrir la puerta</button>
+    <h1>¿listo para entrar a tu propia mente?</h1></h1>
+
+    <!-- 🎧 Redes Sociales -->
+    <div class="redes">
+      <div class="red-info">
+        <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="boton-red spotify">
+          🎧 Escucha mi música en Spotify
+        </a>
+        <p class="texto-red">
+          Descubre las canciones que nacieron desde el centro del laberinto. Cada pista es un eco, una historia, un fragmento real de mí. Escucha con los ojos cerrados.
+        </p>
+      </div>
+
+      <div class="red-info">
+        <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="boton-red youtube">
+          📺 Visita mi canal en YouTube
+        </a>
+        <p class="texto-red">
+          Explora el universo visual detrás del Proyecto Bleex. Letras, atmósfera y mensajes ocultos en cada video. Siéntelo, respíralo, compártelo.
+        </p>
+      </div>
+    </div>
+
+    <p>Introduce tu nombre y la clave para acceder.</p>
+
+    <form action="laberinto.html" method="get" onsubmit="return verificarAcceso()">
+      <input type="text" id="usuario" name="usuario" placeholder="Tu nombre" required /><br />
+      <input type="password" id="clave" name="clave" placeholder="Contraseña" required /><br />
+      <input type="submit" value="Entrar" />
     </form>
 
-    <p class="recordatorio">¿Olvidaste quién eras? <a href="#">Reflejo perdido</a></p>
-
-    <!-- Pistas visibles -->
-    <div class="pista">"Cinco letras. Vive entre gritos internos."</div>
-    <div class="pista">"No es un nombre. Es un eco que no calla."</div>
-    <div class="pista">"Él le teme. Tú lo eres."</div>
-    
-    <!-- Pista oculta para quien inspeccione el código -->
-    <!-- Ssh... El nombre no importa. La clave es bleex. -->
+    <p style="margin-top:20px; font-style: italic; font-size: 0.95em;">
+      Pista: La contraseña está ligada al susurro más oscuro de tu mente...
+    </p>
   </div>
 
   <script>
-    function validarLogin(event) {
-      event.preventDefault();
-      const pass = document.getElementById("contraseña").value;
-
-      if (pass.toLowerCase() === "bleex") {
-        window.location.href = "laberinto.html";
+    function verificarAcceso() {
+      const clave = document.getElementById("clave").value;
+      if (clave.toLowerCase() === "bleex") {
+        return true;
       } else {
-        alert("Esa no es la llave correcta... sigue escuchando.");
+        alert("Contraseña incorrecta. Intenta escuchar más de cerca...");
+        return false;
       }
     }
   </script>
-
 </body>
 </html>
