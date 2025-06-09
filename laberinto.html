@@ -1,20 +1,134 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laberinto</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laberinto Mental</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.laberinto {
+      background: linear-gradient(135deg, #330000, #220011);
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .container {
+      background: rgba(20, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #9a0033;
+    }
+    h1, h2 {
+      color: #ff4fa3; /* fucsia */
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 0 0 6px #ff4fa3;
+    }
+    .bio-section {
+      margin-top: 40px;
+      border-top: 1px solid #ff4fa3;
+      padding-top: 30px;
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+    }
+    .bio-image {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 0 12px #ff4fa3;
+      border: 2px solid #ff4fa3;
+      background: #440022;
+    }
+    .bio-text {
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #f0c1dc;
+    }
+    .boton-bleex {
+      display: inline-block;
+      background: #ff4fa3;
+      color: #220011;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-top: 30px;
+      box-shadow: 0 0 15px #ff4fa3;
+      transition: all 0.35s ease-in-out;
+      text-align: center;
+    }
+    .boton-bleex:hover {
+      background: #e6388f;
+      box-shadow: 0 0 25px #ff79c4;
+      transform: scale(1.05);
+      color: #fff;
+    }
+  </style>
 </head>
 <body class="laberinto">
   <div class="container">
     <h1>Has entrado al Laberinto Mental</h1>
     <p>Explora las puertas, los artefactos y las voces…</p>
     <p>°•|•°</p>
+    <!-- Biografía Bleex -->
+    <section class="bio-section">
+      <img src="assets/bleex.jpg" alt="Imagen de Bleex" class="bio-image" />
+      <div class="bio-text">
+        <h2>Bleex</h2>
+        <p>
+          Bleex es una sombra constante dentro de la mente del Forastero, una presencia oscura que representa la duda, el caos y la autodestrucción. No es simplemente un enemigo externo, sino una voz interna, un eco de miedo que se alimenta de las inseguridades y los traumas más profundos.
+          <br/><br/>
+          Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.
+          <br/><br/>
+          Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.
+        </p>
+      </div>
+    </section>
 
-    <!-- 🔮 Botón hacia Artefactos -->
-    <div style="margin-top: 30px;">
-      <a href="artefactos.html" class="btn-artefactos">⚙ Artefactos del Forastero</a>
+    <!-- Biografía Forastero -->
+    <section class="bio-section">
+      <img src="assets/forastero.jpg" alt="Imagen del Forastero" class="bio-image" />
+      <div class="bio-text">
+        <h2>Forastero</h2>
+        <p>
+          El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.
+          <br/><br/>
+          Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.
+          <br/><br/>
+          En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.
+          <br/><br/>
+          Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser.
+        </p>
+      </div>
+    </section>
+
+    <!-- Biografía del Fucsia Amanecer -->
+    <section class="bio-section">
+      <img src="assets/fucsia_amanecer.jpg" alt="Imagen del Fucsia Amanecer" class="bio-image" />
+      <div class="bio-text">
+        <h2>Los del Fucsia Amanecer</h2>
+        <p>
+          Los del Fucsia Amanecer son aquellos que han despertado entre sombras y luces, quienes escuchan más allá del ruido y buscan respuestas en la música, las palabras y los silencios. Son viajeros de mundos internos, guardianes de secretos que solo se revelan en el borde entre el sueño y la vigilia.
+          <br/><br/>
+          No son simples oyentes, son compañeros en la travesía del Forastero, almas que han sentido el eco de Bleex en sus propias mentes y han decidido no rendirse. En el fucsia del amanecer, encuentran esperanza y fuerza, una promesa de renacer incluso cuando la oscuridad parece eterna.
+          <br/><br/>
+          Son rebeldes emocionales, creadores de su propio camino, y con cada escucha se sumergen más profundo en el laberinto mental, explorando sus propias dudas, miedos y sueños. En su esencia reside la valentía de mirar hacia dentro y transformar el caos en claridad.
+          <br/><br/>
+          Los del Fucsia Amanecer no están solos. Forman una comunidad invisible, un vínculo silencioso que trasciende lo audible, y que mantiene viva la luz entre las grietas del pensamiento.
+        </p>
+      </div>
+    </section>
+
+    <!-- Botón para ir a Artefactos -->
+    <div style="text-align:center;">
+      <a href="artefactos.html" class="boton-bleex">⚙ Artefactos del Forastero</a>
     </div>
   </div>
 </body>
