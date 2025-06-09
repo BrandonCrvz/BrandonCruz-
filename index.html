@@ -21,7 +21,7 @@
 <body>
 
   <div class="container">
-    <h1>¿Estás listo para entrar a tu propia mente… o la de él?</h1>
+    <h1>¿Estás listo para entrar en tu propia mente?</h1>
     
     <form onsubmit="return validarLogin(event)">
       <input type="text" id="usuario" placeholder="Escribe tu nombre..." required>
@@ -45,7 +45,7 @@
       event.preventDefault();
       const pass = document.getElementById("contraseña").value;
 
-      if (pass.toLowerCase() === "bleex") {
+      if (pass.toLowerCase() === "Bleex") {
         window.location.href = "laberinto.html";
       } else {
         alert("Esa no es la llave correcta... sigue escuchando.");
