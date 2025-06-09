@@ -3,59 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ingreso al Laberinto</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Proyecto Bleex</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <audio autoplay loop volume="0.4">
-    <source src="fuego.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
+<body class="login">
+
+  <audio autoplay loop>
+    <source src="assets/leña.mp3" type="audio/mp3">
+    Tu navegador no soporta audio.
   </audio>
 
-  <div class="container">
-    <h1>¿listo para entrar a tu propia mente?</h1></h1>
+  <div class="login-container">
+    <h1>°•|•° Bienvenido a la puerta °•|•°</h1>
+    <p>Solo los que escuchan el eco sabrán entrar...</p>
+    <p>5 letras que susurran</p>
 
-    <!-- 🎧 Redes Sociales -->
-    <div class="redes">
-      <div class="red-info">
-        <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="boton-red spotify">
-          🎧 Escucha mi música en Spotify
-        </a>
-        <p class="texto-red">
-          Descubre las canciones que nacieron desde el centro del laberinto. Cada pista es un eco, una historia, un fragmento real de mí. Escucha con los ojos cerrados.
-        </p>
-      </div>
-
-      <div class="red-info">
-        <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="boton-red youtube">
-          📺 Visita mi canal en YouTube
-        </a>
-        <p class="texto-red">
-          Explora el universo visual detrás del Proyecto Bleex. Letras, atmósfera y mensajes ocultos en cada video. Siéntelo, respíralo, compártelo.
-        </p>
-      </div>
-    </div>
-
-    <p>Introduce tu nombre y la clave para acceder.</p>
-
-    <form action="laberinto.html" method="get" onsubmit="return verificarAcceso()">
-      <input type="text" id="usuario" name="usuario" placeholder="Tu nombre" required /><br />
-      <input type="password" id="clave" name="clave" placeholder="Contraseña" required /><br />
-      <input type="submit" value="Entrar" />
+    <form class="login-form" onsubmit="return validarInicio()">
+      <input type="text" id="usuario" placeholder="Nombre del forastero" required />
+      <input type="password" id="contraseña" placeholder="Contraseña secreta" required />
+      <button type="submit">abrir la puerta</button>
     </form>
 
-    <p style="margin-top:20px; font-style: italic; font-size: 0.95em;">
-      Pista: La contraseña está ligada al susurro más oscuro de tu mente...
-    </p>
+    <!-- 🔗 Botones de redes -->
+    <div class="redes-container">
+      <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="btn-red">
+        <img src="assets/spotify-icon.png" alt="Spotify">
+        <span>Escucha mi música en Spotify</span>
+      </a>
+
+      <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="btn-red">
+        <img src="assets/youtube-icon.png" alt="YouTube">
+        <span>Sumérgete en mi universo en YouTube</span>
+      </a>
+    </div>
   </div>
 
   <script>
-    function verificarAcceso() {
-      const clave = document.getElementById("clave").value;
-      if (clave.toLowerCase() === "bleex") {
-        return true;
+    function validarInicio() {
+      const usuario = document.getElementById("usuario").value;
+      const contraseña = document.getElementById("contraseña").value;
+      if (contraseña.toLowerCase() === "bleex") {
+        window.location.href = "laberinto.html";
+        return false;
       } else {
-        alert("Contraseña incorrecta. Intenta escuchar más de cerca...");
+        alert("La mente no está lista todavía...");
         return false;
       }
     }
