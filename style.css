@@ -1,157 +1,169 @@
-/* ==== ESTILO GENERAL === */
+/* Estilos generales */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d0014;
-  color: #fff;
+  background: linear-gradient(135deg, #1a0000, #300000);
+  color: #f4f4f4;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* ==== INICIO DE SESIÓN === */
-.login-container {
-  background: rgba(30, 0, 40, 0.9);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #ff4fa3;
-  width: 100%;
-  max-width: 400px;
+/* Contenedor principal */
+.container {
   text-align: center;
-  margin: auto;
-  margin-top: 100px;
+  padding: 60px 20px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffdddd;
+  text-shadow: 0 0 10px #ff4444;
+}
+
+h2 {
+  color: #ffaaaa;
+  margin-top: 40px;
+  font-size: 1.8rem;
+}
+
+/* Párrafos */
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Botón animado estilo Bleex */
+.boton-bleex {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(145deg, #620000, #8b0000);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #8b0000;
+  transition: all 0.3s ease-in-out;
+}
+
+.boton-bleex:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #8b0000, #b30000);
+  box-shadow: 0 0 15px #ff0000;
+}
+
+/* Login Form */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: rgba(20, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #8b0000;
 }
 
 .login-container h1 {
-  color: #ff4fa3;
-  margin-bottom: 25px;
-  text-shadow: 0 0 8px #ff4fa3;
+  color: #ff9999;
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 15px 0;
   border: none;
-  border-radius: 10px;
-  background: #330033;
+  border-radius: 8px;
+  background-color: #2b0000;
+  color: #fff;
+}
+
+.login-container button {
+  padding: 10px 25px;
+  background-color: #990000;
+  border: none;
+  border-radius: 8px;
   color: #fff;
   font-size: 1rem;
-  box-shadow: inset 0 0 5px #ff4fa3;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  box-shadow: 0 0 10px #ff4fa3;
-  background: #440044;
-}
-
-.login-button {
-  background: #ff4fa3;
-  border: none;
-  color: #1a001a;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 15px #ff4fa3;
+  transition: 0.3s;
 }
 
-.login-button:hover {
-  background: #e53892;
-  box-shadow: 0 0 20px #ff79c4;
-  transform: scale(1.05);
-  color: #fff;
+.login-container button:hover {
+  background-color: #cc0000;
+  box-shadow: 0 0 10px #ff3333;
 }
 
-.back-link {
-  display: block;
-  margin-top: 20px;
-  color: #ffaad9;
-  text-decoration: none;
-  font-size: 0.95rem;
+/* Imagen de artefacto */
+.artefacto {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 0 15px #400000;
 }
 
-.back-link:hover {
-  text-decoration: underline;
-  color: #ffc4e8;
-}
-/* Fondo y texto para la página laberinto */
-body.laberinto {
-  background: radial-gradient(circle at center, #2b0000, #0a0000 80%);
-  background-attachment: fixed;
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  margin: 0;
-  padding: 40px;
-  text-align: center;
+.artefacto img {
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px #aa0000;
 }
 
-/* Contenedor para centrar contenido */
-.container {
-  max-width: 600px;
-  margin: auto;
+.artefacto h3 {
+  color: #ff9999;
+  margin-top: 10px;
+  font-size: 1.5rem;
 }
 
-/* Botón principal con estilo oscuro y rojo neón */
-.btn-artefactos {
-  display: inline-block;
-  padding: 14px 32px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ff3c3c;
-  background: linear-gradient(45deg, #330000, #660000);
-  border: 2px solid #ff3c3c;
-  border-radius: 30px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 0 8px #ff3c3c88;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  text-decoration: none; /* Quita el subrayado */
+/* Biografía */
+.bio-section {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(60, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 0 10px #660000;
 }
 
-/* Efecto de brillo animado */
-.btn-artefactos::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, #ff3c3c55, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-  border-radius: 30px;
+.bio-section img {
+  max-width: 200px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px #bb0000;
 }
 
-/* Al pasar el cursor, el botón brilla */
-.btn-artefactos:hover {
-  background: linear-gradient(45deg, #660000, #ff0000);
-  box-shadow: 0 0 15px #ff3c3ccc, 0 0 30px #ff3c3c99;
-  color: #fff;
+.bio-section h2 {
+  color: #ffaaaa;
 }
 
-/* Brillo animado */
-.btn-artefactos:hover::before {
-  opacity: 1;
-  animation: pulseGlow 2s infinite alternate ease-in-out;
+.bio-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f8dada;
 }
 
-@keyframes pulseGlow {
-  0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0.4;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .boton-bleex {
+    font-size: 1rem;
+    padding: 12px 20px;
   }
-  100% {
-    transform: scale(1.1) rotate(10deg);
-    opacity: 0.7;
+
+  .artefacto img {
+    max-width: 90%;
+  }
+
+  .login-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .bio-section img {
+    max-width: 150px;
   }
 }
