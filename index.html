@@ -3,53 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Proyecto Bleex</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>FORASTERO</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="login">
 
+  <!-- 🔊 Sonido de fondo -->
   <audio autoplay loop>
-    <source src="assets/leña.mp3" type="audio/mp3">
-    Tu navegador no soporta audio.
+    <source src="fuego.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
   </audio>
 
   <div class="login-container">
-    <h1>°•|•° Bienvenido a la puerta °•|•°</h1>
-    <p>Solo los que escuchan el eco sabrán entrar...</p>
-    <p>5 letras que susurran</p>
+    <h1>°•|•° BIEN VENIDO A LA PUERTA °•|•°</h1>
+    <p>¿listo para entrar en tu propia mente?</p>
 
-    <form class="login-form" onsubmit="return validarInicio()">
-      <input type="text" id="usuario" placeholder="Nombre del forastero" required />
-      <input type="password" id="contraseña" placeholder="Contraseña secreta" required />
-      <button type="submit">abrir la puerta</button>
+    <form action="laberinto.html" method="post">
+      <input type="text" name="usuario" placeholder="Nombre del Forastero" required />
+      <input type="password" name="contrasena" placeholder="Contraseña" required />
+      <button type="submit">Abrir Puerta</button>
     </form>
 
-    <!-- 🔗 Botones de redes -->
-    <div class="redes-container">
-      <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="btn-red">
-        <img src="assets/spotify-icon.png" alt="Spotify">
-        <span>Escucha mi música en Spotify</span>
-      </a>
+    <div class="social-section">
+      <div class="social-button">
+        <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank">
+          <img src="spotify.png" alt="Spotify" />
+        </a>
+        <p>Explora mi música en Spotify y escucha la esencia del Forastero</p>
+      </div>
 
-      <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="btn-red">
-        <img src="assets/youtube-icon.png" alt="YouTube">
-        <span>Sumérgete en mi universo en YouTube</span>
-      </a>
+      <div class="social-button">
+        <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank">
+          <img src="youtube.png" alt="YouTube" />
+        </a>
+        <p>Descubre mi universo visual en YouTube y déjate llevar por el viaje</p>
+      </div>
     </div>
   </div>
 
-  <script>
-    function validarInicio() {
-      const usuario = document.getElementById("usuario").value;
-      const contraseña = document.getElementById("contraseña").value;
-      if (contraseña.toLowerCase() === "bleex") {
-        window.location.href = "laberinto.html";
-        return false;
-      } else {
-        alert("La mente no está lista todavía...");
-        return false;
-      }
-    }
-  </script>
 </body>
 </html>
