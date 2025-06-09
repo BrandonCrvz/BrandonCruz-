@@ -18,16 +18,16 @@
     <p class="subtitulo">°•|•° bien venidos a la puerta °•|•°</p>
     <p class="subtitulo">¿Listo para entrar en tu propia mente?</p>
 
-    <form class="login-form" action="laberinto.html" method="POST">
+    <form class="login-form" onsubmit="return verificarContraseña(event)">
       <input type="text" name="username" placeholder="Tu nombre forastero" required />
-      <input type="password" name="password" placeholder="Llave de 5 espigas" required />
+      <input type="password" id="password" placeholder="Llave de 5 espigas" required />
       <button type="submit">abrir puerta</button>
     </form>
 
     <div class="social-buttons">
       <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="social-button">
         <img src="assets/spotify-icon.png" alt="Spotify">
-        <span>escucha mi musica en Spotify, acompaña al forastero</span>
+        <span>escucha mi música en Spotify, acompaña al forastero</span>
       </a>
       <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="social-button">
         <img src="assets/youtube-icon.png" alt="YouTube">
@@ -35,5 +35,18 @@
       </a>
     </div>
   </div>
+
+  <!-- 🔐 Script para validación -->
+  <script>
+    function verificarContraseña(event) {
+      event.preventDefault();
+      const password = document.getElementById("password").value;
+      if (password === "Bleex") {
+        window.location.href = "laberinto.html";
+      } else {
+        alert("Llave incorrecta. La puerta no se abrirá.");
+      }
+    }
+  </script>
 </body>
 </html>
