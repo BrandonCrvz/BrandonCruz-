@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gracias - Proyecto Bleex</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #330000, #220011);
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      color: #ff4fa3;
+      text-shadow: 0 0 8px #ff4fa3;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      color: #f0c1dc;
+    }
+    button {
+      background-color: #ff4fa3;
+      color: #220011;
+      font-weight: 700;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff4fa3;
+      transition: all 0.35s ease-in-out;
+    }
+    button:hover {
+      background-color: #e6388f;
+      color: #fff;
+      box-shadow: 0 0 25px #ff79c4;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Gracias por unirte al Proyecto Bleex</h1>
+  <p>
+    Gracias por confiar en Bleex y su laberinto mental.<br/>
+    Tu valentía al dejar tu correo es un paso hacia la luz dentro del caos.<br/>
+    Mantente atento a los ecos que vendrán.
+  </p>
+  <button onclick="volver()">Volver al Laberinto</button>
+
+  <script>
+    function volver() {
+      window.location.href = 'laberinto.html';
+    }
+  </script>
+</body>
+</html>
