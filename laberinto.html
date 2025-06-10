@@ -162,19 +162,28 @@
           Suscríbete para recibir fragmentos de la historia, mensajes ocultos y secretos desde el centro del Laberinto Mental.
         </p>
         <form action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
-          <input type="email" name="email" required placeholder="Tu correo electrónico" 
-            style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" />
-          <br>
-          <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
-            Conectar con Bleex
-          </button>
-          <!-- Redirige al usuario a gracias.html luego de enviar -->
-          <input type="hidden" name="_next" value="https://brandoncrvz.github.io/BrandonCruz-/gracias.html">
+  <!-- DESACTIVA CAPTCHA DE FORMSUBMIT -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- REDIRECCIÓN AL ENVIAR -->
+  <input type="hidden" name="_next" value="https://brandoncrvz.github.io/BrandonCruz-/gracias.html">
+
+  <!-- RESPUESTA AUTOMÁTICA EN LUGAR DE MENSAJE DE CONFIRMACIÓN -->
+  <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
+
+  <!-- CAMPO DE CORREO -->
+  <input type="email" name="email" required placeholder="Tu correo electrónico" 
+    style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" />
+  <br>
+
+  <!-- BOTÓN -->
+  <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+    Conectar con Bleex
+  </button>
         </form>
-        <p style="font-size: 12px; color: #999; margin-top: 10px;">Tu mente estará segura. No enviamos spam, solo ecos verdaderos.</p>
+        
       </div>
     </section>
-
   </div>
 </body>
-</html>
+</html> 
