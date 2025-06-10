@@ -155,35 +155,40 @@
     </section>
     
    <!-- Sección de Correo -->
-    <section class="correo-section" style="margin-top: 60px; text-align: center;">
-      <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
-        <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
-        <p style="color: #ddd; margin-bottom: 20px;">
-          Suscríbete para recibir fragmentos de la historia, mensajes ocultos y secretos desde el centro del Laberinto Mental.
-        </p>
-        <form action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
-  <!-- DESACTIVA CAPTCHA DE FORMSUBMIT -->
-  <input type="hidden" name="_captcha" value="false">
+<section class="correo-section" style="margin-top: 60px; text-align: center;">
+  <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
+    <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
+    <p style="color: #ddd; margin-bottom: 20px;">
+      Suscríbete para recibir fragmentos de la historia, mensajes ocultos y secretos desde el centro del Laberinto Mental.
+    </p>
+    
+    <form id="correoForm" action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
+      <!-- Opcionales de seguridad y respuesta -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
 
-  <!-- REDIRECCIÓN AL ENVIAR -->
-  <input type="hidden" name="_next" value="https://brandoncrvz.github.io/BrandonCruz-/gracias.html">
+      <input type="email" name="email" required placeholder="Tu correo electrónico" 
+        style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" />
+      <br>
 
-  <!-- RESPUESTA AUTOMÁTICA EN LUGAR DE MENSAJE DE CONFIRMACIÓN -->
-  <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
+      <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+        Conectar con Bleex
+      </button>
+    </form>
 
-  <!-- CAMPO DE CORREO -->
-  <input type="email" name="email" required placeholder="Tu correo electrónico" 
-    style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" />
-  <br>
+    <p style="font-size: 12px; color: #999; margin-top: 10px;">Tu mente estará segura. No enviamos spam, solo ecos verdaderos.</p>
+  </div>
+</section>
 
-  <!-- BOTÓN -->
-  <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
-    Conectar con Bleex
-  </button>
-        </form>
-        
-      </div>
-    </section>
+<!-- Script para redirección manual -->
+<script>
+  const form = document.getElementById("correoForm");
+  form.addEventListener("submit", function () {
+    setTimeout(function () {
+      window.location.href = "gracias.html";
+    }, 1000);
+  });
+</script>
   </div>
 </body>
-</html> 
+</html>
