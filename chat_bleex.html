@@ -139,14 +139,14 @@
         const data = await res.json();
         const allMessages = chatContainer.querySelectorAll('.message.bleex');
         const lastMsg = allMessages[allMessages.length - 1];
-        if (lastMsg.textContent === 'Escribiendo...') {
+        if (lastMsg.textContent === '¡se levanto! esto sera divertido...!') {
           lastMsg.textContent = data.message.trim();
         } else {
           appendMessage('bleex', data.message.trim());
         }
       } catch (err) {
         console.error('Error:', err);
-        appendMessage('bleex', 'Hubo un error al conectar con Bleex.');
+        appendMessage('bleex', 'siento el eco del tipo caminar.');
       }
     });
   </script>
