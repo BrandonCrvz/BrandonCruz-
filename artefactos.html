@@ -4,29 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Artefactos del Forastero</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
     body {
-      background-color: #1a0e0e;
-      color: #e0dede;
-      font-family: 'Courier New', monospace;
+      background: radial-gradient(circle, #1a0e1a 0%, #0d0510 100%);
+      color: #ffffff;
+      font-family: 'Share Tech Mono', monospace;
       padding: 40px;
     }
 
     h1 {
       text-align: center;
-      color: #e53935;
+      color: #ff66cc;
       letter-spacing: 2px;
       margin-bottom: 50px;
+      text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff99dd;
     }
 
     .artefacto {
       margin-bottom: 60px;
-      background-color: #2e1c1c;
-      border: 1px solid #3b2b2b;
+      background: #1c0e1c;
+      border: 1px solid #291429;
       border-radius: 10px;
       padding: 25px;
-      box-shadow      box-shadow: 0 0 10px rgba(255, 30, 30, 0.3);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05), 0 0 30px rgba(255, 105, 180, 0.3);
     }
 
     .artefacto img {
@@ -35,18 +37,40 @@
       border-radius: 8px;
       display: block;
       margin: 0 auto 20px;
+      box-shadow: 0 0 15px #ff66cc50;
     }
 
     .artefacto h2 {
-      color: #f44336;
+      color: #ff66cc;
       text-align: center;
       margin-bottom: 15px;
+      text-shadow: 0 0 8px #ff99dd, 0 0 10px #ffccff;
     }
 
     .artefacto p {
       font-size: 16px;
       line-height: 1.7;
       white-space: pre-line;
+      color: #fffbe6;
+      text-shadow: 0 0 5px #ffd70030;
+    }
+
+    .boton-bleex {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff66cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #ffd700, 0 0 20px #ff66cc;
+      font-weight: bold;
+      font-family: 'Share Tech Mono', monospace;
+      transition: background 0.3s ease;
+    }
+
+    .boton-bleex:hover {
+      background: #ffaacc;
+      box-shadow: 0 0 20px #ffd700, 0 0 30px #ff99dd;
     }
   </style>
 </head>
@@ -94,9 +118,8 @@ Las personas que luchan con ansiedad, confusión o sobreinformación pueden vers
   </div>
 
   <!-- Botón para volver -->
-    <div style="margin-top: 40px;">
-      <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
-    </div>
+  <div style="margin-top: 40px;">
+    <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
   </div>
 </body>
 </html>
