@@ -8,7 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
     body {
-      background: linear-gradient(135deg, #ffe7f9 0%, #fffef5 40%, #ffccff 60%, #fff0b3 100%);
+      background: linear-gradient(to bottom right, #ffffff, #fff6e5); /* blanco con dorado suave */
       color: #1a1a1a;
       font-family: 'Share Tech Mono', monospace;
       padding: 40px;
@@ -16,19 +16,25 @@
 
     h1 {
       text-align: center;
-      color: #ff33aa;
+      color: #ff1493; /* fucsia neón */
       letter-spacing: 2px;
       margin-bottom: 50px;
-      text-shadow: 0 0 8px #ff99dd, 0 0 15px #ffd700;
+      text-shadow: 0 0 8px #ff1493, 0 0 15px #ff69b4;
     }
 
     .artefacto {
       margin-bottom: 60px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #ffd700;
+      background: #ffffff;
+      border: 2px solid #ff1493;
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 105, 180, 0.2);
+      box-shadow: 0 0 20px #ff1493, 0 0 8px #ff69b4;
+      transition: transform 0.3s ease;
+    }
+
+    .artefacto:hover {
+      transform: scale(1.015);
+      box-shadow: 0 0 30px #ff1493, 0 0 12px #ff69b4;
     }
 
     .artefacto img {
@@ -37,39 +43,40 @@
       border-radius: 8px;
       display: block;
       margin: 0 auto 20px;
-      box-shadow: 0 0 15px #ffb6d950;
+      border: 2px solid #ff1493;
+      box-shadow: 0 0 12px #ff1493;
     }
 
     .artefacto h2 {
-      color: #e91e63;
+      color: #ff1493;
       text-align: center;
       margin-bottom: 15px;
-      text-shadow: 0 0 5px #ffd700;
+      text-shadow: 0 0 6px #ff69b4;
     }
 
     .artefacto p {
       font-size: 16px;
       line-height: 1.7;
       white-space: pre-line;
-      color: #3a3a3a;
+      color: #333;
     }
 
     .boton-bleex {
       display: inline-block;
-      padding: 12px 20px;
-      background: linear-gradient(90deg, #ff66cc, #ffd700);
-      color: #fff;
+      padding: 12px 24px;
+      background-color: #ff1493;
+      color: white;
+      font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: bold;
       font-family: 'Share Tech Mono', monospace;
-      box-shadow: 0 0 10px #ffd700, 0 0 25px #ff66cc;
+      box-shadow: 0 0 12px #ff1493, 0 0 25px #ff69b4;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .boton-bleex:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #ffd700, 0 0 35px #ff99cc;
+      box-shadow: 0 0 18px #ff1493, 0 0 35px #ff69b4;
     }
   </style>
 </head>
