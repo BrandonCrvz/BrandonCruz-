@@ -4,76 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Artefactos del Forastero</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
     body {
-      margin: 0;
+      background-color: #1a0e0e;
+      color: #e0dede;
+      font-family: 'Courier New', monospace;
       padding: 40px;
-      font-family: 'Share Tech Mono', monospace;
-      color: #1a1a1a;
-      background: #000;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Fondo animado glitch leve */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background: repeating-linear-gradient(
-        0deg,
-        #000000,
-        #000000 2px,
-        #111 2px,
-        #111 4px
-      );
-      opacity: 0.05;
-      animation: glitchFondo 3s infinite ease-in-out alternate;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    @keyframes glitchFondo {
-      0% {
-        transform: translate(0px, 0px);
-        opacity: 0.05;
-      }
-      50% {
-        transform: translate(1px, -1px);
-        opacity: 0.1;
-      }
-      100% {
-        transform: translate(-1px, 1px);
-        opacity: 0.05;
-      }
     }
 
     h1 {
       text-align: center;
-      color: #ff1493;
+      color: #e53935;
       letter-spacing: 2px;
       margin-bottom: 50px;
-      text-shadow: 0 0 8px #ff1493, 0 0 15px #ff69b4;
     }
 
     .artefacto {
       margin-bottom: 60px;
-      background: #ffffffdd;
-      border: 2px solid #ff1493;
-      border-radius: 12px;
+      background-color: #2e1c1c;
+      border: 1px solid #3b2b2b;
+      border-radius: 10px;
       padding: 25px;
-      box-shadow: 0 0 20px #ff1493, 0 0 8px #ff69b4;
-      transition: transform 0.3s ease;
-    }
-
-    .artefacto:hover {
-      transform: scale(1.015);
-      box-shadow: 0 0 30px #ff1493, 0 0 12px #ff69b4;
+      box-shadow: 0 0 10px rgba(255, 30, 30, 0.3);
     }
 
     .artefacto img {
@@ -82,24 +35,21 @@
       border-radius: 8px;
       display: block;
       margin: 0 auto 20px;
-      border: 2px solid #ff1493;
-      box-shadow: 0 0 12px #ff1493;
     }
 
     .artefacto h2 {
-      color: #ff1493;
+      color: #f44336;
       text-align: center;
       margin-bottom: 15px;
-      text-shadow: 0 0 6px #ff69b4;
     }
 
     .artefacto p {
       font-size: 16px;
       line-height: 1.7;
       white-space: pre-line;
-      color: #333;
     }
 
+    /* Nuevo estilo del botón "Volver" */
     .boton-bleex {
       display: inline-block;
       padding: 12px 24px;
@@ -108,7 +58,7 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Courier New', monospace;
       box-shadow: 0 0 12px #ff1493, 0 0 25px #ff69b4;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
@@ -162,6 +112,7 @@ Las personas que luchan con ansiedad, confusión o sobreinformación pueden vers
     </p>
   </div>
 
+  <!-- Botón para volver -->
   <div style="margin-top: 40px;">
     <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
   </div>
