@@ -75,6 +75,23 @@
       transform: scale(1.05);
       color: #fff;
     }
+
+    /* 👁️ OJO PARPADEANDO */
+    .ojo-parpadeando {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+      animation: parpadear 4s infinite;
+      filter: drop-shadow(0 0 8px #ff4fa3);
+    }
+
+    @keyframes parpadear {
+      0%, 90%, 100% { opacity: 1; transform: scaleY(1); }
+      95% { opacity: 0.1; transform: scaleY(0.2); }
+    }
   </style>
 </head>
 <body class="laberinto">
@@ -115,7 +132,7 @@
       </div>
     </section>
 
-    <!-- Biografía del Fucsia Amanecer -->
+    <!-- Biografía Fucsia Amanecer -->
     <section class="bio-section">
       <img src="assets/artefactos/fucsia_amanecer.jpg" alt="Imagen del Fucsia Amanecer" class="bio-image" />
       <div class="bio-text">
@@ -132,7 +149,7 @@
       </div>
     </section>
 
-    <!-- Botones de Artefactos -->
+    <!-- Botones -->
     <div style="text-align:center;">
       <a href="artefactos.html" class="boton-bleex">⚙ Artefactos del Forastero</a><br/><br/>
       <a href="artefactos_bleex.html" class="boton-bleex">🩸 Artefactos de Bleex</a><br/><br/>
@@ -141,7 +158,7 @@
       <a href="chat_bleex.html" class="boton-bleex">💬 Chat con Bleex</a>
     </div>
 
-    <!-- Sección del Mapa -->
+    <!-- Mapa -->
     <section class="bio-section" style="flex-direction: column; align-items: center;">
       <h2>Mapa</h2>
       <img src="assets/artefactos/mapa.jpg" alt="Mapa del Laberinto Mental" class="bio-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; margin-bottom: 20px;" />
@@ -152,7 +169,7 @@
       </p>
     </section>
 
-    <!-- Sección de Correo -->
+    <!-- Correo -->
     <section class="correo-section" style="margin-top: 60px; text-align: center;">
       <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
         <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
@@ -162,9 +179,7 @@
         <form id="correoForm" action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
-          <input type="email" name="email" required placeholder="Tu correo electrónico" 
-            style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" />
-          <br>
+          <input type="email" name="email" required placeholder="Tu correo electrónico" style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" /><br>
           <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
             Conectar con Bleex
           </button>
@@ -173,7 +188,6 @@
       </div>
     </section>
 
-    <!-- Script para redirección -->
     <script>
       const form = document.getElementById("correoForm");
       form.addEventListener("submit", function () {
@@ -183,5 +197,8 @@
       });
     </script>
   </div>
+
+  <!-- 👁️ OJO PARPADEANDO -->
+  <img src="assets/artefactos/ojo.png" alt="Ojo de Bleex" class="ojo-parpadeando" />
 </body>
 </html>
