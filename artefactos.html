@@ -13,11 +13,35 @@
       padding: 40px;
     }
 
+    /* Brillo animado del título */
     h1 {
       text-align: center;
       color: #ff1493;
       letter-spacing: 2px;
       margin-bottom: 50px;
+      text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 15px #ff1493,
+        0 0 20px #ff1493;
+      animation: brilloTitulo 2s infinite alternate;
+    }
+
+    @keyframes brilloTitulo {
+      0% {
+        text-shadow:
+          0 0 5px white,
+          0 0 10px white,
+          0 0 15px #ff1493,
+          0 0 20px #ff1493;
+      }
+      100% {
+        text-shadow:
+          0 0 10px white,
+          0 0 20px white,
+          0 0 25px #ff1493,
+          0 0 35px #ff1493;
+      }
     }
 
     .artefacto {
@@ -26,7 +50,18 @@
       border: 1px solid #3b2b2b;
       border-radius: 10px;
       padding: 25px;
-      box-shadow: 0 0 10px rgba(255, 20, 147, 0.4);
+      box-shadow:
+        0 0 15px rgba(255, 20, 147, 0.6),
+        0 0 25px rgba(255, 20, 147, 0.4),
+        0 0 35px rgba(255, 20, 147, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .artefacto:hover {
+      box-shadow:
+        0 0 25px rgba(255, 20, 147, 0.8),
+        0 0 35px rgba(255, 20, 147, 0.6),
+        0 0 45px rgba(255, 20, 147, 0.4);
     }
 
     .artefacto img {
@@ -49,7 +84,6 @@
       white-space: pre-line;
     }
 
-    /* Botón con estilo fucsia neón */
     .boton-bleex {
       display: inline-block;
       padding: 12px 24px;
@@ -59,13 +93,13 @@
       text-decoration: none;
       border-radius: 6px;
       font-family: 'Courier New', monospace;
-      box-shadow: 0 0 12px #ff1493, 0 0 25px #ff69b4;
+      box-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .boton-bleex:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 18px #ff1493, 0 0 35px #ff69b4;
+      box-shadow: 0 0 25px #ff1493, 0 0 45px #ff69b4, 0 0 60px #ff69b4;
     }
   </style>
 </head>
