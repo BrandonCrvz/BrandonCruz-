@@ -8,19 +8,33 @@
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
     body {
+      position: relative;
       margin: 0;
       padding: 40px;
       font-family: 'Share Tech Mono', monospace;
       color: #1a1a1a;
-      background: linear-gradient(135deg, #ffffff, #fffbe6, #ffffff);
-      background-size: 300% 300%;
-      animation: brillarDorado 15s ease-in-out infinite;
+      background: #fff;
+      overflow-x: hidden;
     }
 
-    @keyframes brillarDorado {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15), transparent 60%),
+                  linear-gradient(135deg, #fffdf2 0%, #ffffff 50%, #fff7d1 100%);
+      mix-blend-mode: screen;
+      animation: ondaDorada 12s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes ondaDorada {
+      0% { transform: translate(-10%, -10%) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.05); }
+      100% { transform: translate(-10%, -10%) scale(1); }
     }
 
     h1 {
@@ -33,7 +47,7 @@
 
     .artefacto {
       margin-bottom: 60px;
-      background: #ffffffcc;
+      background: #ffffffdd;
       border: 2px solid #ff1493;
       border-radius: 12px;
       padding: 25px;
@@ -132,7 +146,6 @@ Las personas que luchan con ansiedad, confusión o sobreinformación pueden vers
     </p>
   </div>
 
-  <!-- Botón para volver -->
   <div style="margin-top: 40px;">
     <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
   </div>
