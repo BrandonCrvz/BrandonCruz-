@@ -8,15 +8,16 @@
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
     body {
-      position: relative;
       margin: 0;
       padding: 40px;
       font-family: 'Share Tech Mono', monospace;
       color: #1a1a1a;
-      background: #fff;
+      background: #000;
+      position: relative;
       overflow-x: hidden;
     }
 
+    /* Fondo animado glitch leve */
     body::before {
       content: "";
       position: fixed;
@@ -24,17 +25,32 @@
       left: 0;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15), transparent 60%),
-                  linear-gradient(135deg, #fffdf2 0%, #ffffff 50%, #fff7d1 100%);
-      mix-blend-mode: screen;
-      animation: ondaDorada 12s ease-in-out infinite;
+      background: repeating-linear-gradient(
+        0deg,
+        #000000,
+        #000000 2px,
+        #111 2px,
+        #111 4px
+      );
+      opacity: 0.05;
+      animation: glitchFondo 3s infinite ease-in-out alternate;
+      pointer-events: none;
       z-index: -1;
     }
 
-    @keyframes ondaDorada {
-      0% { transform: translate(-10%, -10%) scale(1); }
-      50% { transform: translate(10%, 10%) scale(1.05); }
-      100% { transform: translate(-10%, -10%) scale(1); }
+    @keyframes glitchFondo {
+      0% {
+        transform: translate(0px, 0px);
+        opacity: 0.05;
+      }
+      50% {
+        transform: translate(1px, -1px);
+        opacity: 0.1;
+      }
+      100% {
+        transform: translate(-1px, 1px);
+        opacity: 0.05;
+      }
     }
 
     h1 {
