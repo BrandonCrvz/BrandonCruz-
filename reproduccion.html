@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transmisión Mental</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle, #1a001a, #000);
+      color: #f0c1dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .radio-container {
+      background: #220011;
+      border: 2px solid #ff4fa3;
+      box-shadow: 0 0 25px #ff4fa3;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ff4fa3;
+      text-shadow: 0 0 8px #ff4fa3;
+    }
+
+    .radio-wave {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #d8a4c3;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 20px;
+      outline: none;
+      border-radius: 8px;
+      background: #440022;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #ff4fa3;
+      color: #220011;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ff4fa3;
+      transition: 0.3s;
+    }
+
+    .volver:hover {
+      background: #e6388f;
+      color: #fff;
+      box-shadow: 0 0 25px #ff79c4;
+    }
+  </style>
+</head>
+<body>
+  <div class="radio-container">
+    <h1>📡 Transmisión desde el Centro</h1>
+    <p class="radio-wave">Sintonizando frecuencias mentales... ecos del Forastero detectados.</p>
+
+    <!-- 🎧 Audio -->
+    <audio controls>
+      <source src="assets/audio/reproduccion.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el reproductor de audio.
+    </audio>
+
+    <a href="index.html" class="volver">← Salir del canal</a>
+  </div>
+</body>
+</html>
