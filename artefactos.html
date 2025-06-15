@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Artefactos del Forastero</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #1a0e0e;
@@ -12,55 +13,54 @@
       padding: 40px;
     }
 
-    /* Título fucsia con brillo fucsia */
+    /* Título con brillo fucsia intenso */
     h1 {
       text-align: center;
       color: #ff1493;
       letter-spacing: 2px;
       margin-bottom: 50px;
       text-shadow:
-        0 0 5px #ff1493,
         0 0 10px #ff1493,
-        0 0 15px #ff1493,
-        0 0 20px #ff1493;
+        0 0 20px #ff1493,
+        0 0 30px #ff1493,
+        0 0 40px #ff1493;
       animation: brilloTitulo 2s infinite alternate;
     }
 
     @keyframes brilloTitulo {
       0% {
         text-shadow:
-          0 0 5px #ff1493,
           0 0 10px #ff1493,
-          0 0 15px #ff1493,
-          0 0 20px #ff1493;
+          0 0 20px #ff1493,
+          0 0 30px #ff1493,
+          0 0 40px #ff1493;
       }
       100% {
         text-shadow:
-          0 0 10px #ff1493,
-          0 0 15px #ff1493,
           0 0 20px #ff1493,
-          0 0 25px #ff1493;
+          0 0 30px #ff1493,
+          0 0 40px #ff1493,
+          0 0 50px #ff1493;
       }
     }
 
     .artefacto {
       margin-bottom: 60px;
       background-color: #2e1c1c;
-      border: 1px solid #3b2b2b;
       border-radius: 10px;
       padding: 25px;
       box-shadow:
-        0 0 25px rgba(255, 20, 147, 0.8),
-        0 0 35px rgba(255, 20, 147, 0.6),
-        0 0 45px rgba(255, 20, 147, 0.4);
+        0 0 25px rgba(255, 20, 147, 0.9),
+        0 0 35px rgba(255, 20, 147, 0.7),
+        0 0 45px rgba(255, 20, 147, 0.5);
       transition: box-shadow 0.3s ease;
     }
 
     .artefacto:hover {
       box-shadow:
         0 0 35px rgba(255, 20, 147, 1),
-        0 0 50px rgba(255, 20, 147, 0.8),
-        0 0 60px rgba(255, 20, 147, 0.6);
+        0 0 45px rgba(255, 20, 147, 0.9),
+        0 0 55px rgba(255, 20, 147, 0.8);
     }
 
     .artefacto img {
@@ -92,13 +92,13 @@
       text-decoration: none;
       border-radius: 6px;
       font-family: 'Courier New', monospace;
-      box-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+      box-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4, 0 0 60px #ff69b4;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .boton-bleex:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #ff1493, 0 0 45px #ff69b4, 0 0 60px #ff69b4;
+      box-shadow: 0 0 30px #ff1493, 0 0 60px #ff69b4, 0 0 80px #ff69b4;
     }
   </style>
 </head>
@@ -106,7 +106,7 @@
   <h1>Artefactos del Forastero</h1>
 
   <div class="artefacto">
-    <img src="assets/artefactos/fragmento-del-centro.jpg" alt="Fragmento del Centro">
+    <img src="assets/artefactos/fragmento-del-centro.jpg" alt="Fragmento del Centro" />
     <h2>Fragmento del Centro</h2>
     <p>
 Forjado fuera del tiempo y encontrado en lo más profundo del "Espacio Inquieto", este amuleto no es solo una piedra. Es un pedazo de la conciencia original, lo que queda cuando la mente aún no ha sido contaminada por la duda, la voz, o el caos que representa él.
@@ -122,7 +122,7 @@ Pero su uso tiene un precio: cuanto más se conecta a él, más vulnerable queda
   </div>
 
   <div class="artefacto">
-    <img src="assets/artefactos/gato-de-coral.jpg" alt="El Gato de Coral">
+    <img src="assets/artefactos/gato-de-coral.jpg" alt="El Gato de Coral" />
     <h2>El Gato de Coral</h2>
     <p>
 Un pequeño muñeco de felpa, deshilachado por el tiempo, con forma de gato naranja. Sus ojos son dos botones negros cosidos de manera desigual y su cuerpo está relleno con un material que cruje suavemente al apretarlo, como si llevara dentro arena o pequeños cristales. Lleva un pequeño lazo rojo alrededor del cuello. El muñeco siempre huele un poco a hogar... pero uno que ya no existe.
@@ -134,7 +134,7 @@ Cuando el protagonista lo lleva encima (en el bolsillo, colgado del cinturón, e
   </div>
 
   <div class="artefacto">
-    <img src="assets/artefactos/venda-de-ecos.jpg" alt="La Venda de Ecos">
+    <img src="assets/artefactos/venda-de-ecos.jpg" alt="La Venda de Ecos" />
     <h2>La Venda de Ecos</h2>
     <p>
 Permite escuchar el pensamiento real detrás del ruido, pero a costa de desconectarte un poco de la realidad.
@@ -145,6 +145,7 @@ Las personas que luchan con ansiedad, confusión o sobreinformación pueden vers
     </p>
   </div>
 
+  <!-- Botón para volver -->
   <div style="margin-top: 40px;">
     <a href="laberinto.html" class="boton-bleex">← Volver al Laberinto</a>
   </div>
