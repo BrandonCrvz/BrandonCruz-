@@ -33,7 +33,7 @@
     .radio {
       width: 100%;
       border-radius: 12px;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.3s ease;
     }
 
     .boton-radio {
@@ -91,30 +91,33 @@
 
   <audio id="radioAudio" src="assets/artefactos/reproduccion.mp3" loop></audio>
 
+  <!-- Precarga las imágenes para evitar parpadeos -->
+  <link rel="preload" as="image" href="assets/artefactos/radio_apagada.png">
+  <link rel="preload" as="image" href="assets/artefactos/radio_encendida.png">
+
   <script>
     let encendida = false;
+    const radioImg = document.getElementById('radioImg');
     const radioAudio = document.getElementById('radioAudio');
     const radioContainer = document.getElementById('radioContainer');
+
+    // Precargar imágenes en segundo plano
+    const imgApagada = new Image();
+    imgApagada.src = 'assets/artefactos/radio_apagada.png';
+    const imgEncendida = new Image();
+    imgEncendida.src = 'assets/artefactos/radio_encendida.png';
 
     function toggleRadio() {
       encendida = !encendida;
 
-      const timestamp = new Date().getTime();
-      const nuevaSrc = encendida
-        ? 'assets/artefactos/radio_encendida.png?' + timestamp
-        : 'assets/artefactos/radio_apagada.png?' + timestamp;
+      radioImg.style.opacity = 0;
 
-      const nuevaImg = document.createElement('img');
-      nuevaImg.src = nuevaSrc;
-      nuevaImg.alt = 'Radio';
-      nuevaImg.className = 'radio';
-      nuevaImg.id = 'radioImg';
-
-      const viejaImg = document.getElementById('radioImg');
-      radioContainer.replaceChild(nuevaImg, viejaImg);
-
-      const botonRadio = document.querySelector('.boton-radio');
-      botonRadio.onclick = toggleRadio;
+      setTimeout(() => {
+        radioImg.src = encendida
+          ? imgEncendida.src
+          : imgApagada.src;
+        radioImg.style.opacity = 1;
+      }, 100); // tiempo corto de fundido
 
       if (encendida) {
         radioAudio.play();
