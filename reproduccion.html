@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -84,7 +84,7 @@
 
   <h1>°•|•° Haz clic en la radio para encender o apagar °•|•°</h1>
 
-  <div class="radio-container" id="radioContainer">
+  <div class="radio-container glitch" id="radioContainer">
     <img src="assets/artefactos/radio_apagada.png" alt="Radio" id="radioImg" class="radio">
     <div class="boton-radio" onclick="toggleRadio()"></div>
   </div>
@@ -93,8 +93,6 @@
 
   <script>
     let encendida = false;
-
-    const radioImg = document.getElementById('radioImg');
     const radioAudio = document.getElementById('radioAudio');
     const radioContainer = document.getElementById('radioContainer');
 
@@ -102,12 +100,21 @@
       encendida = !encendida;
 
       const timestamp = new Date().getTime();
-      const nuevaImagen = encendida
+      const nuevaSrc = encendida
         ? 'assets/artefactos/radio_encendida.png?' + timestamp
         : 'assets/artefactos/radio_apagada.png?' + timestamp;
 
-      console.log("Cambiando imagen a:", nuevaImagen);
-      radioImg.setAttribute('src', nuevaImagen);
+      const nuevaImg = document.createElement('img');
+      nuevaImg.src = nuevaSrc;
+      nuevaImg.alt = 'Radio';
+      nuevaImg.className = 'radio';
+      nuevaImg.id = 'radioImg';
+
+      const viejaImg = document.getElementById('radioImg');
+      radioContainer.replaceChild(nuevaImg, viejaImg);
+
+      const botonRadio = document.querySelector('.boton-radio');
+      botonRadio.onclick = toggleRadio;
 
       if (encendida) {
         radioAudio.play();
