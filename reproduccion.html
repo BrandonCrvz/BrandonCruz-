@@ -31,9 +31,9 @@
 
   <h1>Haz clic en la radio para encender o apagar</h1>
 
-  <img src="radio_apagada.png" alt="Radio" id="radioImg" class="radio" onclick="toggleRadio()">
+  <img src="assets/artefactos/radio_apagada.png" alt="Radio" id="radioImg" class="radio" onclick="toggleRadio()">
 
-  <audio id="radioAudio" src="reproduccion.mp3" loop></audio>
+  <audio id="radioAudio" src="assets/artefactos/reproduccion.mp3" loop></audio>
 
   <script>
     let encendida = false;
@@ -44,10 +44,10 @@
       encendida = !encendida;
 
       if (encendida) {
-        radioImg.src = 'radio_encendida.png';
+        radioImg.src = 'assets/artefactos/radio_encendida.png';
         radioAudio.play();
       } else {
-        radioImg.src = 'radio_apagada.png';
+        radioImg.src = 'assets/artefactos/radio_apagada.png';
         radioAudio.pause();
         radioAudio.currentTime = 0;
       }
