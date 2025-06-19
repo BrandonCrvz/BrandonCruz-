@@ -5,12 +5,27 @@
   <title>Radio Bleex Interactiva</title>
   <style>
     body {
-      background-color: #0a0a0a;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
       color: #fff;
       text-align: center;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 40px 20px;
+    }
+
+    /* VIDEO DE FONDO */
+    #backgroundVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.2; /* Puedes ajustar esto */
+      filter: brightness(0.7) contrast(1.2);
+      pointer-events: none;
     }
 
     h1 {
@@ -18,9 +33,11 @@
       color: #ff0055;
       text-shadow: 0 0 6px #ff0055, 0 0 2px #fff;
       letter-spacing: 2px;
-      margin-bottom: 30px;
+      margin: 40px 0 20px;
       font-weight: bold;
       text-transform: uppercase;
+      position: relative;
+      z-index: 2;
     }
 
     .radio-container {
@@ -28,6 +45,7 @@
       display: inline-block;
       width: 95vw;
       max-width: 800px;
+      z-index: 2;
     }
 
     .radio {
@@ -43,27 +61,7 @@
       width: 40%;
       height: 28%;
       cursor: pointer;
-      z-index: 2;
-    }
-
-    .glitch-on::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('assets/artefactos/humo_rojo.gif') center/cover no-repeat;
-      mix-blend-mode: screen;
-      opacity: 0.3;
-      animation: parpadeo 0.7s ease-in-out;
-      pointer-events: none;
-      border-radius: 12px;
-    }
-
-    @keyframes parpadeo {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
+      z-index: 3;
     }
 
     @media screen and (max-width: 600px) {
@@ -82,26 +80,25 @@
 </head>
 <body>
 
+  <!-- 🎥 VIDEO DE FONDO SIEMPRE ACTIVO -->
+  <video id="backgroundVideo" autoplay muted loop playsinline>
+    <source src="assets/artefactos/fondo_bleex.mp4" type="video/mp4">
+  </video>
+
   <h1>°•|•° Haz clic en la radio para encender o apagar °•|•°</h1>
 
-  <div class="radio-container glitch" id="radioContainer">
+  <div class="radio-container" id="radioContainer">
     <img src="assets/artefactos/radio_apagada.png" alt="Radio" id="radioImg" class="radio">
     <div class="boton-radio" onclick="toggleRadio()"></div>
   </div>
 
   <audio id="radioAudio" src="assets/artefactos/reproduccion.mp3" loop></audio>
 
-  <!-- Precarga las imágenes para evitar parpadeos -->
-  <link rel="preload" as="image" href="assets/artefactos/radio_apagada.png">
-  <link rel="preload" as="image" href="assets/artefactos/radio_encendida.png">
-
   <script>
     let encendida = false;
     const radioImg = document.getElementById('radioImg');
     const radioAudio = document.getElementById('radioAudio');
-    const radioContainer = document.getElementById('radioContainer');
 
-    // Precargar imágenes en segundo plano
     const imgApagada = new Image();
     imgApagada.src = 'assets/artefactos/radio_apagada.png';
     const imgEncendida = new Image();
@@ -113,19 +110,15 @@
       radioImg.style.opacity = 0;
 
       setTimeout(() => {
-        radioImg.src = encendida
-          ? imgEncendida.src
-          : imgApagada.src;
+        radioImg.src = encendida ? imgEncendida.src : imgApagada.src;
         radioImg.style.opacity = 1;
-      }, 100); // tiempo corto de fundido
+      }, 100);
 
       if (encendida) {
         radioAudio.play();
-        radioContainer.classList.add('glitch-on');
       } else {
         radioAudio.pause();
         radioAudio.currentTime = 0;
-        radioContainer.classList.remove('glitch-on');
       }
     }
   </script>
