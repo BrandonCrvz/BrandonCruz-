@@ -14,7 +14,7 @@
     }
 
     h1 {
-      font-size: 1.7em;
+      font-size: 1.8em;
       color: #ff0055;
       text-shadow: 0 0 6px #ff0055, 0 0 2px #fff;
       letter-spacing: 2px;
@@ -26,21 +26,22 @@
     .radio-container {
       position: relative;
       display: inline-block;
-      max-width: 90vw;
-      width: 500px;
+      width: 95vw;
+      max-width: 800px;
     }
 
     .radio {
       width: 100%;
       border-radius: 12px;
+      transition: transform 0.3s ease;
     }
 
     .boton-radio {
       position: absolute;
-      top: 45%;  /* ajusta esto según la posición real de la radio */
-      left: 30%; /* ajusta según el tamaño real */
-      width: 40%; /* esto define qué parte es clickeable */
-      height: 30%;
+      top: 45%;
+      left: 30%;
+      width: 40%;
+      height: 28%;
       cursor: pointer;
       z-index: 2;
     }
@@ -67,7 +68,7 @@
 
     @media screen and (max-width: 600px) {
       h1 {
-        font-size: 1.2em;
+        font-size: 1.3em;
       }
 
       .boton-radio {
@@ -100,11 +101,11 @@
       encendida = !encendida;
 
       if (encendida) {
-        radioImg.src = 'assets/artefactos/radio_encendida.png';
+        radioImg.src = 'assets/artefactos/radio_encendida.png?' + new Date().getTime();
         radioAudio.play();
         radioContainer.classList.add('glitch-on');
       } else {
-        radioImg.src = 'assets/artefactos/radio_apagada.png';
+        radioImg.src = 'assets/artefactos/radio_apagada.png?' + new Date().getTime();
         radioAudio.pause();
         radioAudio.currentTime = 0;
         radioContainer.classList.remove('glitch-on');
