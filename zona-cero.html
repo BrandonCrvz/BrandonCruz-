@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Zona Cero - Libro</title>
+
   <!-- Librerías necesarias -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://www.turnjs.com/lib/turn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 
   <!-- Estilos -->
   <style>
@@ -29,19 +30,19 @@
     }
 
     .page {
-      background: #111;
-      color: #eaeaea;
+      background: #fff;
+      color: #111;
       padding: 50px;
-      border: 1px solid #ff003c33;
+      border: 1px solid #ccc;
       box-sizing: border-box;
       text-align: justify;
     }
 
     .page h2 {
       text-align: center;
-      color: #ff003c;
+      color: #d90429;
       margin-bottom: 30px;
-      text-shadow: 0 0 5px #ff003caa;
+      text-shadow: 0 0 5px #ff003c66;
     }
 
     .entry {
@@ -55,6 +56,18 @@
       color: #ff5577;
       font-size: 0.85rem;
     }
+
+    /* Animación y realismo */
+    #flipbook .page {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to right, #fff 0%, #f8f8f8 100%);
+    }
+
+    /* Estilo de libro abierto */
+    #flipbook {
+      border: 2px solid #333;
+      background: #222;
+    }
   </style>
 </head>
 
@@ -65,28 +78,9 @@
     <div class="page">
       <h2>Capítulo I: El Despertar</h2>
       <div class="entry">
-        El Forastero vivía atrapado en la repetición de sus días. Nada era distinto, nada tenía propósito. Se despertaba sin saber por qué lo hacía, sin razones reales, como si algo más allá de su voluntad lo obligara a abrir los ojos.
+        El Forastero vivía atrapado en la repetición de sus días. Nada era distinto, nada tenía propósito...
 
-        <br><br>
-        Se levantó. Caminó hacia la ventana. El día no tenía forma. El cielo estaba tan apagado como su ánimo. Observó el exterior unos segundos, pero no encontró respuestas, ni ganas. Solo el peso del aire.
-
-        <br><br>
-        Encendió la televisión. Cambió de canal como quien busca compañía en voces desconocidas, pero no encontró nada. Solo ruido. Apagó el aparato y se quedó en silencio, escuchando su mente.
-
-        <br><br>
-        Fue a comer. La comida estaba ahí, como cada día, pero no sentía hambre. No sentía nada. La dejó a un lado, intacta. Se levantó de la mesa, giró hacia atrás. Por un instante... sintió que su propia sombra se había movido.
-
-        <br><br>
-        Fue al espejo. Lo miró fijamente. Por un segundo, no se reconoció. Sus ojos no eran los suyos. Su reflejo no devolvía la misma energía. Era como mirar a un desconocido atrapado detrás del cristal.
-
-        <br><br>
-        El día terminó sin emociones. Sin cambios. El Forastero se acostó, no para dormir, sino para escapar. Pero su mente no lo dejó. Los pensamientos comenzaron a repetirse, a mezclarse, a rasgarle el descanso.
-
-        <br><br>
-        Pensaba. Pensaba. Pensaba. No dormía, no podía. Hasta que en algún momento el cansancio fue más fuerte que el pensamiento.
-
-        <br><br>
-        <em>Algunas personas se duermen.</em><br>
+        <br><br><em>Algunas personas se duermen.</em><br>
         <em>Otras simplemente se quedan dormidas.</em>
 
         <div class="chapter-footer">Archivo: Entrada I</div>
@@ -97,20 +91,7 @@
     <div class="page">
       <h2>Capítulo II: Confundido</h2>
       <div class="entry">
-        Abrió los ojos y lo primero que sintió fue el silencio. Ya no estaba en su habitación. Las paredes eran de madera vieja, el aire olía a frío, a humedad y a abandono. Una cabaña, perdida en algún rincón donde ni siquiera su mente parecía reconocer.
-
-        <br><br>
-        Se incorporó lentamente. Afuera, un paisaje gris. No recordaba haber caminado hasta allí. No recordaba haber salido de casa. Todo lo anterior —la ventana, el espejo, la sombra— parecía haber quedado muy lejos. Como si el mundo lo hubiera transportado sin pedir permiso.
-
-        <br><br>
-        Entonces la escuchó. No era una voz externa. Era algo dentro de él. Un murmullo que no usaba palabras, pero decía:<br>
-        <em>“Hay un camino. Hay alguien esperando.”</em>
-
-        <br><br>
-        Pero él no se movió. No porque no pudiera, sino porque no sabía si debía. El Forastero dudó. Se sentó junto a una pequeña fuente de calor: una chispa temblorosa que apenas se sostenía. Su único refugio ante el frío que ya no era del clima, sino del alma.
-
-        <br><br>
-        Se quedó ahí. Confundido. Esperando. Dudando. Sintiéndose partido entre dos versiones de sí mismo: la que quería quedarse y la que necesitaba avanzar.
+        Abrió los ojos y lo primero que sintió fue el silencio...
 
         <div class="chapter-footer">Archivo: Entrada II</div>
       </div>
@@ -119,10 +100,15 @@
 
   <!-- Activar efecto libro -->
   <script>
-    $("#flipbook").turn({
-      width: 800,
-      height: 500,
-      autoCenter: true
+    $(document).ready(function () {
+      $("#flipbook").turn({
+        width: 800,
+        height: 500,
+        autoCenter: true,
+        elevation: 50,         // Borde curvo
+        gradients: true,       // Simula doblez
+        duration: 800          // Animación más fluida
+      });
     });
   </script>
 
