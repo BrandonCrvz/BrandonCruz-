@@ -82,23 +82,27 @@
   padding: 30px 0;
   justify-content: center;
 }
+
 .boton-bleex {
   scroll-snap-align: start;
   position: relative;
   display: inline-block;
-  width: 2000px;
-  height: 60px;
-  border-radius: 24px;
+  width: 360px;              /* Más ancho horizontalmente */
+  height: 44px;              /* Más delgado verticalmente */
+  border-radius: 18px;       /* Bordes adaptados a la altura */
   overflow: hidden;
   box-shadow: 0 0 10px #ff4fa355;
   border: 2px solid #ff94cd88;
   cursor: pointer;
+  flex-shrink: 0;            /* Evita que se encojan en scroll horizontal */
 }
+
 .boton-bleex img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;         /* Mantiene bien la imagen dentro del botón */
 }
+
 .boton-bleex span {
   position: absolute;
   bottom: 0;
@@ -107,11 +111,14 @@
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 8px;              /* Un poco más delgado para la altura nueva */
   font-weight: bold;
+  font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  box-sizing: border-box;
 }
+
 .boton-bleex:hover span {
   opacity: 1;
 }
@@ -122,8 +129,8 @@
   padding: 30px 0;
 }
 .libro-portada {
-  width: 240px;
-  height: 230px;
+  width: 180px;
+  height: 260px;
   border-radius: 16px;
   background-size: cover;
   background-position: center;
