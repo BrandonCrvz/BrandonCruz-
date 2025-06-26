@@ -27,27 +27,25 @@
       text-shadow: 0 0 6px #ff4fa3;
     }/* Sección biografías */
  .seccion-biografias {
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-snap-type: x mandatory;
   display: flex;
-  flex-direction: row;  /* Esto asegura el scroll horizontal */
+  flex-direction: row;         /* ¡IMPORTANTE! para scroll horizontal */
+  overflow-x: auto;            /* Habilita el scroll horizontal */
+  scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 20px 0;
- }
+  white-space: nowrap;         /* Esto ayuda a que no se acomoden verticalmente */  
 }
 .bio-card {
   scroll-snap-align: start;
   background: rgba(20, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0 0 20px #9a0033;
-  width: 100%; /* Aquí cambiamos el 100% */
-  min-width: 90vw;  /* Cambié el 100% a 90% del viewport */
-  max-width: 900px; /* Esto puede ayudarte a dar un tamaño más controlado */
-  flex-shrink: 0;
+  min-width: 90vw;            /* Esto hace que cada tarjeta ocupe casi toda la pantalla */
+  max-width: 90vw;
+  flex-shrink: 0;             /* Evita que se reduzcan si el espacio es pequeño */
   padding: 30px;
   display: flex;
-  flex-direction: column; /* Mantén esto, para que los elementos dentro de la tarjeta se acomoden verticalmente */
+  flex-direction: column;
   align-items: center;
 }
 .bio-card img {
