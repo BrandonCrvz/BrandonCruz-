@@ -1,173 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<title>Zona_Cero</title>
+  <meta charset="UTF-8" />
+  <title>Libro_ZonaCero</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    margin: 0; padding: 0;
-    background: #0a0a0a;
-    font-family: 'Merriweather', serif;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
+    body {
+      background: #0a0a0a;
+      font-family: 'Merriweather', serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-  .carousel-container {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    overflow-x: hidden;
-    background: #111;
-    box-shadow: 0 0 40px rgba(255, 0, 60, 0.3);
-    border-radius: 8px;
-  }
+    .libro-scroll {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      gap: 40px;
+      padding: 40px;
+      width: 100vw;
+      height: 95vh;
+      scroll-behavior: smooth;
+    }
 
-  .carousel {
-    display: flex;
-    height: 100%;
-    transition: transform 0.7s ease;
-  }
+    .pagina {
+      flex: 0 0 900px;
+      height: 100%;
+      background: #111;
+      border-radius: 12px;
+      border: 2px solid #ff003c55;
+      box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
+      color: #eaeaea;
+      padding: 50px;
+      scroll-snap-align: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      overflow-y: auto;
+    }
 
-  .page {
-    flex: 0 0 800px;
-    padding: 50px;
-    box-sizing: border-box;
-    color: #eaeaea;
-    text-align: justify;
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.5s ease;
-  }
+    .pagina.visible {
+      opacity: 1;
+    }
 
-  .page h2 {
-    color: #ff003c;
-    text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 0 0 5px #ff003caa;
-  }
+    .pagina h2 {
+      color: #ff003c;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 5px #ff003caa;
+    }
 
-  .chapter-footer {
-    margin-top: 40px;
-    text-align: right;
-    color: #ff5577;
-    font-size: 0.85rem;
-  }
+    .pagina p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
 
-  /* Botones de navegación */
-  .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 0, 60, 0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    font-size: 36px;
-    color: white;
-    transition: background 0.3s;
-    z-index: 10;
-  }
-
-  .nav-btn:hover {
-    background: rgba(255, 0, 60, 0.9);
-  }
-
-  .nav-prev {
-    left: 10px;
-  }
-
-  .nav-next {
-    right: 10px;
-  }
-
-</style>
+    .chapter-footer {
+      text-align: right;
+      color: #ff5577;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="carousel-container">
-  <div class="carousel" id="carousel">
-
-    <div class="page">
+  <div class="libro-scroll" id="libro">
+    <div class="pagina">
       <h2>Capítulo I: El Despertar</h2>
       <p>El Forastero vivía atrapado en la repetición de sus días. Nada era distinto, nada tenía propósito. Se despertaba sin saber por qué lo hacía, sin razones reales, como si algo más allá de su voluntad lo obligara a abrir los ojos.</p>
       <p>Se levantó. Caminó hacia la ventana. El día no tenía forma. El cielo estaba tan apagado como su ánimo. Observó el exterior unos segundos, pero no encontró respuestas, ni ganas. Solo el peso del aire.</p>
       <p>Encendió la televisión. Cambió de canal como quien busca compañía en voces desconocidas, pero no encontró nada. Solo ruido. Apagó el aparato y se quedó en silencio, escuchando su mente.</p>
-      <p>Fue a comer. La comida estaba ahí, como cada día, pero no sentía hambre. No sentía nada. La dejó a un lado, intacta. Se levantó de la mesa, giró hacia atrás. Por un instante... sintió que su propia sombra se había movido.</p>
       <p>Fue al espejo. Lo miró fijamente. Por un segundo, no se reconoció. Sus ojos no eran los suyos. Su reflejo no devolvía la misma energía. Era como mirar a un desconocido atrapado detrás del cristal.</p>
-      <p>El día terminó sin emociones. Sin cambios. El Forastero se acostó, no para dormir, sino para escapar. Pero su mente no lo dejó. Los pensamientos comenzaron a repetirse, a mezclarse, a rasgarle el descanso.</p>
-      <p>Pensaba. Pensaba. Pensaba. No dormía, no podía. Hasta que en algún momento el cansancio fue más fuerte que el pensamiento.</p>
       <p><em>Algunas personas se duermen.</em><br><em>Otras simplemente se quedan dormidas.</em></p>
       <div class="chapter-footer">Archivo: Entrada I</div>
     </div>
 
-    <div class="page">
+    <div class="pagina">
       <h2>Capítulo II: Confundido</h2>
       <p>Abrió los ojos y lo primero que sintió fue el silencio. Ya no estaba en su habitación. Las paredes eran de madera vieja, el aire olía a frío, a humedad y a abandono. Una cabaña, perdida en algún rincón donde ni siquiera su mente parecía reconocer.</p>
       <p>Se incorporó lentamente. Afuera, un paisaje gris. No recordaba haber caminado hasta allí. No recordaba haber salido de casa. Todo lo anterior —la ventana, el espejo, la sombra— parecía haber quedado muy lejos. Como si el mundo lo hubiera transportado sin pedir permiso.</p>
       <p>Entonces la escuchó. No era una voz externa. Era algo dentro de él. Un murmullo que no usaba palabras, pero decía:<br><em>“Hay un camino. Hay alguien esperando.”</em></p>
       <p>Pero él no se movió. No porque no pudiera, sino porque no sabía si debía. El Forastero dudó. Se sentó junto a una pequeña fuente de calor: una chispa temblorosa que apenas se sostenía. Su único refugio ante el frío que ya no era del clima, sino del alma.</p>
-      <p>Se quedó ahí. Confundido. Esperando. Dudando. Sintiéndose partido entre dos versiones de sí mismo: la que quería quedarse y la que necesitaba avanzar.</p>
       <div class="chapter-footer">Archivo: Entrada II</div>
     </div>
-
   </div>
 
-  <div class="nav-btn nav-prev" id="prevBtn">&#8249;</div>
-  <div class="nav-btn nav-next" id="nextBtn">&#8250;</div>
-</div>
+  <script>
+    const paginas = document.querySelectorAll('.pagina');
 
-<script>
-  const carousel = document.getElementById('carousel');
-  const pages = document.querySelectorAll('.page');
-  const totalPages = pages.length;
-  let currentIndex = 0;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
 
-  // Inicial: solo la primera visible con opacity 1, resto 0
-  pages.forEach((page, i) => {
-    page.style.opacity = (i === 0) ? '1' : '0';
-    page.style.position = 'absolute';
-    page.style.top = '0';
-    page.style.left = '0';
-    page.style.width = '100%';
-    page.style.height = '100%';
-    page.style.transition = 'opacity 0.6s ease';
-  });
-
-  function showPage(index) {
-    if (index < 0 || index >= totalPages) return;
-    pages[currentIndex].style.opacity = '0';
-    pages[index].style.opacity = '1';
-    currentIndex = index;
-  }
-
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    if(currentIndex > 0) showPage(currentIndex - 1);
-  });
-
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    if(currentIndex < totalPages - 1) showPage(currentIndex + 1);
-  });
-
-  // Navegación con teclado
-  document.addEventListener('keydown', e => {
-    if(e.key === 'ArrowLeft') {
-      if(currentIndex > 0) showPage(currentIndex -1);
-    } else if(e.key === 'ArrowRight') {
-      if(currentIndex < totalPages -1) showPage(currentIndex +1);
-    }
-  });
-</script>
-
+    paginas.forEach(pagina => observer.observe(pagina));
+  </script>
 </body>
 </html>
