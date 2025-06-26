@@ -2,112 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Zona Cero - Libro</title>
-
-  <!-- Librerías necesarias -->
+  <title>Zona_cero</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
-
-  <!-- Estilos -->
+  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-
     body {
-      margin: 0;
-      padding: 0;
-      background: #0a0a0a;
+      background: #111;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: 'Merriweather', serif;
     }
 
     #flipbook {
       width: 800px;
       height: 500px;
-      box-shadow: 0 0 40px rgba(255, 0, 60, 0.3);
     }
 
     .page {
-      background: #fff;
-      color: #111;
-      padding: 50px;
-      border: 1px solid #ccc;
+      width: 400px;
+      height: 500px;
+      background: white;
+      padding: 40px;
       box-sizing: border-box;
-      text-align: justify;
-    }
-
-    .page h2 {
-      text-align: center;
-      color: #d90429;
-      margin-bottom: 30px;
-      text-shadow: 0 0 5px #ff003c66;
-    }
-
-    .entry {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .chapter-footer {
-      margin-top: 40px;
-      text-align: right;
-      color: #ff5577;
-      font-size: 0.85rem;
-    }
-
-    /* Animación y realismo */
-    #flipbook .page {
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(to right, #fff 0%, #f8f8f8 100%);
-    }
-
-    /* Estilo de libro abierto */
-    #flipbook {
-      border: 2px solid #333;
-      background: #222;
+      font-family: serif;
+      font-size: 18px;
     }
   </style>
 </head>
-
 <body>
 
   <div id="flipbook">
-    <!-- Página 1: Capítulo I -->
-    <div class="page">
-      <h2>Capítulo I: El Despertar</h2>
-      <div class="entry">
-        El Forastero vivía atrapado en la repetición de sus días. Nada era distinto, nada tenía propósito...
-
-        <br><br><em>Algunas personas se duermen.</em><br>
-        <em>Otras simplemente se quedan dormidas.</em>
-
-        <div class="chapter-footer">Archivo: Entrada I</div>
-      </div>
-    </div>
-
-    <!-- Página 2: Capítulo II -->
-    <div class="page">
-      <h2>Capítulo II: Confundido</h2>
-      <div class="entry">
-        Abrió los ojos y lo primero que sintió fue el silencio...
-
-        <div class="chapter-footer">Archivo: Entrada II</div>
-      </div>
-    </div>
+    <div class="page">Página 1</div>
+    <div class="page">Página 2</div>
+    <div class="page">Página 3</div>
+    <div class="page">Página 4</div>
   </div>
 
-  <!-- Activar efecto libro -->
   <script>
     $(document).ready(function () {
-      $("#flipbook").turn({
+      $('#flipbook').turn({
         width: 800,
         height: 500,
         autoCenter: true,
-        elevation: 50,         // Borde curvo
-        gradients: true,       // Simula doblez
-        duration: 800          // Animación más fluida
+        gradients: true,
+        elevation: 50
       });
     });
   </script>
