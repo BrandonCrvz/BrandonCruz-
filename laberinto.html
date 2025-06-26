@@ -26,18 +26,13 @@
       margin-bottom: 10px;
       text-shadow: 0 0 6px #ff4fa3;
     }/* Sección biografías */
-.bio-card {
-  scroll-snap-align: start;
-  background: rgba(20, 0, 0, 0.7);
-  border-radius: 12px;
-  box-shadow: 0 0 20px #9a0033;
-  min-width: 90vw; /* Asegura que ocupe casi toda la pantalla */
-  max-width: 900px;
-  flex-shrink: 0;
-  padding: 30px;
+    .seccion-biografias {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
 }
 .bio-card {
   scroll-snap-align: start;
