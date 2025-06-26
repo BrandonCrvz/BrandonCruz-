@@ -3,7 +3,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laberinto Mental</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body.laberinto {
       background: linear-gradient(135deg, #330000, #220011);
@@ -24,24 +23,22 @@
       text-align: center;
       margin-bottom: 10px;
       text-shadow: 0 0 6px #ff4fa3;
-    }/* Biografías en carrusel */
+    }/* Biografías en columnas deslizable */
 .biografias-wrapper {
   display: flex;
   overflow-x: auto;
-  gap: 25px;
   scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
 }
 .bio-section {
   min-width: 100%;
-  flex: none;
   scroll-snap-align: center;
   display: flex;
-  gap: 25px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .bio-image {
-  flex-shrink: 0;
   width: 180px;
   height: 180px;
   border-radius: 15px;
@@ -49,62 +46,66 @@
   box-shadow: 0 0 12px #ff4fa3;
   border: 2px solid #ff4fa3;
   background: #440022;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.bio-image:hover {
-  box-shadow: 0 0 20px #ff79c4;
-  transform: scale(1.02);
+  margin-bottom: 20px;
 }
 .bio-text {
-  flex: 1;
   font-size: 1.05rem;
   line-height: 1.5;
   color: #f0c1dc;
+  max-width: 700px;
 }
 
-/* Botones en carrusel */
+/* Botones en carrusel con imagen */
 .botones-wrapper {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
   scroll-snap-type: x mandatory;
+  gap: 20px;
   justify-content: center;
+  padding: 20px 0;
 }
 .boton-bleex {
-  flex: 0 0 auto;
+  flex: 0 0 80%;
   background: #ff4fa3;
   border: 2px solid #ff94cd55;
   color: #220011;
   font-weight: 700;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 0;
+  border-radius: 20px;
   text-decoration: none;
   font-size: 1.2rem;
   box-shadow: 0 0 10px #ff4fa355;
-  transition: all 0.35s ease-in-out;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 180px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
   text-align: center;
-  position: relative;
 }
-.boton-bleex::after {
-  content: attr(data-label);
+.boton-bleex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #ff94cd55;
+}
+.boton-bleex span {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
   position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffbfe5;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.boton-bleex:hover::after {
-  opacity: 1;
+  bottom: 0;
+  left: 0;
+  font-weight: bold;
 }
 .boton-bleex:hover {
   background: #e6388f;
   box-shadow: 0 0 25px #ff79c4;
   transform: scale(1.05);
-  color: #fff;
 }
 
 /* Libros carrusel */
@@ -156,7 +157,6 @@
     <p>Explora las puertas, los artefactos y las voces…</p>
     <p>°•|•°</p><!-- BIOGRAFÍAS -->
 <div class="biografias-wrapper">
-  <!-- Bleex -->
   <section class="bio-section">
     <img src="assets/artefactos/bleex.jpg" alt="Imagen de Bleex" class="bio-image" />
     <div class="bio-text">
@@ -165,45 +165,56 @@
       <br/><br/>  
       Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.  
       <br/><br/>  
-      Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.  </p>
+      Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.</p>
     </div>
   </section>
-  <!-- Forastero -->
   <section class="bio-section">
     <img src="assets/artefactos/forastero.jpg" alt="Imagen del Forastero" class="bio-image" />
     <div class="bio-text">
       <h2>Forastero</h2>
-      <p>El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.  
+      <p>Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.  
       <br/><br/>  
       Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.  
       <br/><br/>  
       En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.  
       <br/><br/>  
-      Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser. </p>
+      Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser.  </p>
     </div>
   </section>
-  <!-- Fucsia Amanecer -->
   <section class="bio-section">
     <img src="assets/artefactos/fucsia_amanecer.jpg" alt="Imagen del Fucsia Amanecer" class="bio-image" />
     <div class="bio-text">
       <h2>Los del Fucsia Amanecer</h2>
-      <p>Los del Fucsia Amanecer son aquellos que han despertado entre sombras y luces, quienes escuchan más allá del ruido y buscan respuestas en la música, las palabras y los silencios. Son viajeros de mundos internos, guardianes de secretos que solo se revelan en el borde entre el sueño y la vigilia.  
-      <br/><br/>  
-      No son simples oyentes, son compañeros en la travesía del Forastero, almas que han sentido el eco de Bleex en sus propias mentes y han decidido no rendirse. En el fucsia del amanecer, encuentran esperanza y fuerza, una promesa de renacer incluso cuando la oscuridad parece eterna.  
-      <br/><br/>  
-      Son rebeldes emocionales, creadores de su propio camino, y con cada escucha se sumergen más profundo en el laberinto mental, explorando sus propias dudas, miedos y sueños. En su esencia reside la valentía de mirar hacia dentro y transformar el caos en claridad.  
-      <br/><br/>  
-      Los del Fucsia Amanecer no están solos. Forman una comunidad invisible, un vínculo silencioso que trasciende lo audible, y que mantiene viva la luz entre las grietas del pensamiento.  </p>
+      <p>Los del Fucsia Amanecer son aquellos que han despertado [...]</p>
+    </div>
+  </section>
+  <section class="bio-section">
+    <img src="assets/artefactos/mapa.jpg" alt="Mapa del Laberinto Mental" class="bio-image" style="width: 100%; max-width: 600px; height: auto;" />
+    <div class="bio-text">
+      <h2>Mapa</h2>
+      <p>Este mapa no tiene rumbo ni dirección clara [...]</p>
     </div>
   </section>
 </div>
 
-<!-- BOTONES DE ARTEFACTOS -->
+<!-- BOTONES DE ARTEFACTOS CON IMÁGENES -->
 <div class="botones-wrapper">
-  <a href="artefactos.html" class="boton-bleex" data-label="Artefactos del Forastero">⚙</a>
-  <a href="artefactos_bleex.html" class="boton-bleex" data-label="Artefactos de Bleex">🩸</a>
-  <a href="artefacto-fucsia.html" class="boton-bleex" data-label="Fucsia Amanecer">🌸</a>
-  <a href="video_mensaje.html" class="boton-bleex" data-label="Próximamente">🎥</a>
+  <a href="artefactos.html" class="boton-bleex">
+    <img src="assets/artefactos/btn-forastero.jpg" alt="Forastero" />
+    <span>Artefactos del Forastero</span>
+  </a>
+  <a href="artefactos_bleex.html" class="boton-bleex">
+    <img src="assets/artefactos/btn-bleex.jpg" alt="Bleex" />
+    <span>Artefactos de Bleex</span>
+  </a>
+  <a href="artefacto-fucsia.html" class="boton-bleex">
+    <img src="assets/artefactos/btn-fucsia.jpg" alt="Fucsia" />
+    <span>Fucsia Amanecer</span>
+  </a>
+  <a href="video_mensaje.html" class="boton-bleex">
+    <img src="assets/artefactos/btn-video.jpg" alt="Video" />
+    <span>Próximamente</span>
+  </a>
 </div>
 
 <!-- LIBROS / ZONA CERO -->
@@ -211,10 +222,9 @@
   <a href="zona-cero.html">
     <div class="libro-portada" style="background-image: url('assets/artefactos/zona-cero-portada.jpg');" title="Leer Zona Cero"></div>
   </a>
-  <!-- Más libros pueden añadirse aquí en el futuro -->
 </div>
 
-<!-- CORREO / NO CAMBIADO -->
+<!-- CORREO -->
 <section class="correo-section">
   <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
     <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
@@ -233,7 +243,7 @@
   </div>
 </section>
 
-  </div>  <!-- OJO PARPADEANDO -->  <a href="reproduccion.html" title="Sintonizar la frecuencia mental">
+  </div>  <a href="reproduccion.html" title="Sintonizar la frecuencia mental">
     <img src="assets/artefactos/ojo.png" alt="Ojo de Bleex" class="ojo-parpadeando" />
   </a>
 </body>
