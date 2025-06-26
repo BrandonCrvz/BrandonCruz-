@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,182 +24,217 @@
       text-align: center;
       margin-bottom: 10px;
       text-shadow: 0 0 6px #ff4fa3;
-    }
-    .bio-section {
-      margin-top: 40px;
-      border-top: 1px solid #ff4fa3;
-      padding-top: 30px;
-      display: flex;
-      gap: 25px;
-      align-items: flex-start;
-    }
-    .bio-image {
-      flex-shrink: 0;
-      width: 180px;
-      height: 180px;
-      border-radius: 15px;
-      object-fit: cover;
-      box-shadow: 0 0 12px #ff4fa3;
-      border: 2px solid #ff4fa3;
-      background: #440022;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .bio-image:hover {
-      box-shadow: 0 0 20px #ff79c4;
-      transform: scale(1.02);
-    }
-    .bio-text {
-      flex: 1;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      color: #f0c1dc;
-    }
-    .boton-bleex {
-      display: inline-block;
-      background: #ff4fa3;
-      color: #220011;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      margin-top: 30px;
-      box-shadow: 0 0 15px #ff4fa3;
-      transition: all 0.35s ease-in-out;
-      text-align: center;
-    }
-    .boton-bleex:hover {
-      background: #e6388f;
-      box-shadow: 0 0 25px #ff79c4;
-      transform: scale(1.05);
-      color: #fff;
-    }
+    }/* Biografías en carrusel */
+.biografias-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+.bio-section {
+  min-width: 100%;
+  flex: none;
+  scroll-snap-align: center;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+.bio-image {
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 12px #ff4fa3;
+  border: 2px solid #ff4fa3;
+  background: #440022;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.bio-image:hover {
+  box-shadow: 0 0 20px #ff79c4;
+  transform: scale(1.02);
+}
+.bio-text {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #f0c1dc;
+}
 
-    /* 👁️ OJO PARPADEANDO */
-    .ojo-parpadeando {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      z-index: 1000;
-      animation: parpadear 4s infinite;
-      filter: drop-shadow(0 0 8px #ff4fa3);
-    }
+/* Botones en carrusel */
+.botones-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+}
+.boton-bleex {
+  flex: 0 0 auto;
+  background: #ff4fa3;
+  border: 2px solid #ff94cd55;
+  color: #220011;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px #ff4fa355;
+  transition: all 0.35s ease-in-out;
+  text-align: center;
+  position: relative;
+}
+.boton-bleex::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffbfe5;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.boton-bleex:hover::after {
+  opacity: 1;
+}
+.boton-bleex:hover {
+  background: #e6388f;
+  box-shadow: 0 0 25px #ff79c4;
+  transform: scale(1.05);
+  color: #fff;
+}
 
-    @keyframes parpadear {
-      0%, 90%, 100% { opacity: 1; transform: scaleY(1); }
-      95% { opacity: 0.1; transform: scaleY(0.2); }
-    }
+/* Libros carrusel */
+.libros-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 30px 0;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+}
+.libro-portada {
+  width: 160px;
+  height: 220px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ff4fa3;
+  box-shadow: 0 0 12px #ff4fa388;
+  cursor: pointer;
+  scroll-snap-align: center;
+}
+
+.correo-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.ojo-parpadeando {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  animation: parpadear 4s infinite;
+  filter: drop-shadow(0 0 8px #ff4fa3);
+}
+@keyframes parpadear {
+  0%, 90%, 100% { opacity: 1; transform: scaleY(1); }
+  95% { opacity: 0.1; transform: scaleY(0.2); }
+}
+
   </style>
 </head>
 <body class="laberinto">
   <div class="container">
     <h1>Has entrado al Laberinto Mental</h1>
     <p>Explora las puertas, los artefactos y las voces…</p>
-    <p>°•|•°</p>
-
-    <!-- Biografía Bleex -->
-    <section class="bio-section">
-      <img src="assets/artefactos/bleex.jpg" alt="Imagen de Bleex" class="bio-image" />
-      <div class="bio-text">
-        <h2>Bleex</h2>
-        <p>
-          Bleex es una sombra constante dentro de la mente del Forastero, una presencia oscura que representa la duda, el caos y la autodestrucción. No es simplemente un enemigo externo, sino una voz interna, un eco de miedo que se alimenta de las inseguridades y los traumas más profundos.
-          <br/><br/>
-          Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.
-          <br/><br/>
-          Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.
-        </p>
-      </div>
-    </section>
-
-    <!-- Biografía Forastero -->
-    <section class="bio-section">
-      <img src="assets/artefactos/forastero.jpg" alt="Imagen del Forastero" class="bio-image" />
-      <div class="bio-text">
-        <h2>Forastero</h2>
-        <p>
-          El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.
-          <br/><br/>
-          Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.
-          <br/><br/>
-          En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.
-          <br/><br/>
-          Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser.
-        </p>
-      </div>
-    </section>
-
-    <!-- Biografía Fucsia Amanecer -->
-    <section class="bio-section">
-      <img src="assets/artefactos/fucsia_amanecer.jpg" alt="Imagen del Fucsia Amanecer" class="bio-image" />
-      <div class="bio-text">
-        <h2>Los del Fucsia Amanecer</h2>
-        <p>
-          Los del Fucsia Amanecer son aquellos que han despertado entre sombras y luces, quienes escuchan más allá del ruido y buscan respuestas en la música, las palabras y los silencios. Son viajeros de mundos internos, guardianes de secretos que solo se revelan en el borde entre el sueño y la vigilia.
-          <br/><br/>
-          No son simples oyentes, son compañeros en la travesía del Forastero, almas que han sentido el eco de Bleex en sus propias mentes y han decidido no rendirse. En el fucsia del amanecer, encuentran esperanza y fuerza, una promesa de renacer incluso cuando la oscuridad parece eterna.
-          <br/><br/>
-          Son rebeldes emocionales, creadores de su propio camino, y con cada escucha se sumergen más profundo en el laberinto mental, explorando sus propias dudas, miedos y sueños. En su esencia reside la valentía de mirar hacia dentro y transformar el caos en claridad.
-          <br/><br/>
-          Los del Fucsia Amanecer no están solos. Forman una comunidad invisible, un vínculo silencioso que trasciende lo audible, y que mantiene viva la luz entre las grietas del pensamiento.
-        </p>
-      </div>
-    </section>
-
-    <!-- Botones -->
-    <div style="text-align:center;">
-      <a href="artefactos.html" class="boton-bleex">⚙ Artefactos del Forastero</a><br/><br/>
-      <a href="artefactos_bleex.html" class="boton-bleex">🩸 Artefactos de Bleex</a><br/><br/>
-      <a href="artefacto-fucsia.html" class="boton-bleex">🌸 Artefacto de los Fucsia Amanecer</a><br/><br/>
-      <a href="video_mensaje.html" class="boton-bleex">🎥 PROXIMAMENTE</a><br/><br/>
-      <a href="chat_bleex.html" class="boton-bleex">💬 Chat con Bleex</a>
+    <p>°•|•°</p><!-- BIOGRAFÍAS -->
+<div class="biografias-wrapper">
+  <!-- Bleex -->
+  <section class="bio-section">
+    <img src="assets/artefactos/bleex.jpg" alt="Imagen de Bleex" class="bio-image" />
+    <div class="bio-text">
+      <h2>Bleex</h2>
+      <p>Bleex es una sombra constante dentro de la mente del Forastero, una presencia oscura que representa la duda, el caos y la autodestrucción. No es simplemente un enemigo externo, sino una voz interna, un eco de miedo que se alimenta de las inseguridades y los traumas más profundos.  
+      <br/><br/>  
+      Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.  
+      <br/><br/>  
+      Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.  </p>
     </div>
+  </section>
+  <!-- Forastero -->
+  <section class="bio-section">
+    <img src="assets/artefactos/forastero.jpg" alt="Imagen del Forastero" class="bio-image" />
+    <div class="bio-text">
+      <h2>Forastero</h2>
+      <p>El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.  
+      <br/><br/>  
+      Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.  
+      <br/><br/>  
+      En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.  
+      <br/><br/>  
+      Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser. </p>
+    </div>
+  </section>
+  <!-- Fucsia Amanecer -->
+  <section class="bio-section">
+    <img src="assets/artefactos/fucsia_amanecer.jpg" alt="Imagen del Fucsia Amanecer" class="bio-image" />
+    <div class="bio-text">
+      <h2>Los del Fucsia Amanecer</h2>
+      <p>Los del Fucsia Amanecer son aquellos que han despertado entre sombras y luces, quienes escuchan más allá del ruido y buscan respuestas en la música, las palabras y los silencios. Son viajeros de mundos internos, guardianes de secretos que solo se revelan en el borde entre el sueño y la vigilia.  
+      <br/><br/>  
+      No son simples oyentes, son compañeros en la travesía del Forastero, almas que han sentido el eco de Bleex en sus propias mentes y han decidido no rendirse. En el fucsia del amanecer, encuentran esperanza y fuerza, una promesa de renacer incluso cuando la oscuridad parece eterna.  
+      <br/><br/>  
+      Son rebeldes emocionales, creadores de su propio camino, y con cada escucha se sumergen más profundo en el laberinto mental, explorando sus propias dudas, miedos y sueños. En su esencia reside la valentía de mirar hacia dentro y transformar el caos en claridad.  
+      <br/><br/>  
+      Los del Fucsia Amanecer no están solos. Forman una comunidad invisible, un vínculo silencioso que trasciende lo audible, y que mantiene viva la luz entre las grietas del pensamiento.  </p>
+    </div>
+  </section>
+</div>
 
-    <!-- Mapa -->
-    <section class="bio-section" style="flex-direction: column; align-items: center;">
-      <h2>Mapa</h2>
-      <img src="assets/artefactos/mapa.jpg" alt="Mapa del Laberinto Mental" class="bio-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; margin-bottom: 20px;" />
-      <p class="bio-text" style="text-align: center;">
-        Este mapa no tiene rumbo ni dirección clara. Sus líneas cambian, se desvanecen o aparecen según quien lo observe. Solo aquel que haya despertado entre sombras y comprenda el eco del caos podrá leerlo realmente. 
-        <br/><br/>
-        Es más que un dibujo: es un reflejo del laberinto interior, una guía muda que revela caminos al alma que se atreva a buscar su verdad.
-      </p>
-    </section>
+<!-- BOTONES DE ARTEFACTOS -->
+<div class="botones-wrapper">
+  <a href="artefactos.html" class="boton-bleex" data-label="Artefactos del Forastero">⚙</a>
+  <a href="artefactos_bleex.html" class="boton-bleex" data-label="Artefactos de Bleex">🩸</a>
+  <a href="artefacto-fucsia.html" class="boton-bleex" data-label="Fucsia Amanecer">🌸</a>
+  <a href="video_mensaje.html" class="boton-bleex" data-label="Próximamente">🎥</a>
+</div>
 
-    <!-- Correo -->
-    <section class="correo-section" style="margin-top: 60px; text-align: center;">
-      <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
-        <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
-        <p style="color: #ddd; margin-bottom: 20px;">
-          Suscríbete para recibir fragmentos de la historia, mensajes ocultos y secretos desde el centro del Laberinto Mental.
-        </p>
-        <form id="correoForm" action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
-          <input type="email" name="email" required placeholder="Tu correo electrónico" style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" /><br>
-          <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
-            Conectar con Bleex
-          </button>
-        </form>
-        <p style="font-size: 12px; color: #999; margin-top: 10px;">Tu mente estará segura. No enviamos spam, solo ecos verdaderos.</p>
-      </div>
-    </section>
+<!-- LIBROS / ZONA CERO -->
+<div class="libros-wrapper">
+  <a href="zona-cero.html">
+    <div class="libro-portada" style="background-image: url('assets/artefactos/zona-cero-portada.jpg');" title="Leer Zona Cero"></div>
+  </a>
+  <!-- Más libros pueden añadirse aquí en el futuro -->
+</div>
 
-    <script>
-      const form = document.getElementById("correoForm");
-      form.addEventListener("submit", function () {
-        setTimeout(function () {
-          window.location.href = "gracias.html";
-        }, 1000);
-      });
-    </script>
+<!-- CORREO / NO CAMBIADO -->
+<section class="correo-section">
+  <div style="background: rgba(40, 0, 40, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #ff4fa3; max-width: 600px; margin: auto;">
+    <h2 style="color: #ff4fa3; margin-bottom: 20px;">Recibe Ecos del Proyecto Bleex</h2>
+    <p style="color: #ddd; margin-bottom: 20px;">
+      Suscríbete para recibir fragmentos de la historia, mensajes ocultos y secretos desde el centro del Laberinto Mental.
+    </p>
+    <form id="correoForm" action="https://formsubmit.co/682a471b59fd908f92104debd70518ba" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Gracias por suscribirte. Muy pronto recibirás ecos del Proyecto Bleex.">
+      <input type="email" name="email" required placeholder="Tu correo electrónico" style="padding: 12px; border-radius: 8px; border: none; width: 80%; max-width: 400px; margin-bottom: 10px;" /><br>
+      <button type="submit" style="background-color: #ff4fa3; color: #1a001a; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+        Conectar con Bleex
+      </button>
+    </form>
+    <p style="font-size: 12px; color: #999; margin-top: 10px;">Tu mente estará segura. No enviamos spam, solo ecos verdaderos.</p>
   </div>
+</section>
 
-  <!-- 👁️ OJO PARPADEANDO CON ENLACE -->
-<a href="reproduccion.html" title="Sintonizar la frecuencia mental">
-  <img src="assets/artefactos/ojo.png" alt="Ojo de Bleex" class="ojo-parpadeando" />
-</a>
+  </div>  <!-- OJO PARPADEANDO -->  <a href="reproduccion.html" title="Sintonizar la frecuencia mental">
+    <img src="assets/artefactos/ojo.png" alt="Ojo de Bleex" class="ojo-parpadeando" />
+  </a>
 </body>
 </html>
