@@ -7,7 +7,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -25,6 +24,7 @@
       align-items: center;
       overflow: hidden;
       padding: 20px;
+      text-align: center;
     }
 
     .main-text {
@@ -35,9 +35,7 @@
         0 0 20px #ff003c,
         0 0 40px #ff1f44;
       animation: neonMove 2.5s infinite ease-in-out alternate;
-      text-align: center;
       max-width: 100%;
-      word-wrap: break-word;
     }
 
     @keyframes neonMove {
@@ -49,6 +47,13 @@
         transform: translateX(10px);
         text-shadow: 0 0 10px #ff003c, 0 0 60px #ff1f44;
       }
+    }
+
+    .countdown {
+      font-size: 1.8rem;
+      color: #ffcccc;
+      margin-top: 20px;
+      text-shadow: 0 0 8px #ff003c;
     }
 
     .details {
@@ -78,10 +83,6 @@
     }
 
     @media (min-width: 1024px) {
-      body {
-        padding: 60px;
-      }
-
       .details {
         font-size: 1rem;
       }
@@ -90,6 +91,11 @@
 </head>
 <body>
   <h1 class="main-text">PÁGINA EN MANTENIMIENTO</h1>
+
+  <div class="countdown" id="countdown">
+    Cargando cuenta regresiva... °•|•°
+  </div>
+
   <div class="details" aria-label="Detalles de mantenimiento">
     <strong>Detalles:</strong>
     <ul>
@@ -98,5 +104,33 @@
       <li>3. Incorporación del libro "Zona Cero"</li>
     </ul>
   </div>
+
+  <script>
+    // Fecha actual + 7 días
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 7);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "¡Ya volvimos!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s restantes`;
+    }
+
+    // Actualiza cada segundo
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
