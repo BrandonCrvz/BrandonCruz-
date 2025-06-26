@@ -72,9 +72,21 @@
       font-size: 0.85rem;
       margin-top: 40px;
     }
+      /* 🎇 EFECTO ESPECIAL PARA CAPÍTULO 3 */
+    .pagina-especial {
+      transform: scale(0.96);
+      box-shadow: 0 0 20px rgba(255, 0, 60, 0.2);
+      transition: transform 0.8s ease, box-shadow 0.8s ease, opacity 0.8s ease;
+    }
+
+    .pagina-especial.visible {
+      transform: scale(1);
+      box-shadow: 0 0 40px rgba(255, 0, 60, 0.5);
+    }
   </style>
 </head>
 <body>
+  
 
     <div class="libro-scroll" id="libro">
     <div class="pagina">
@@ -128,7 +140,18 @@
       
       <div class="chapter-footer">pag 2</div>
     </div>
-  </div>
+
+          <!-- Capítulo III con efecto especial -->
+    <div class="pagina pagina-especial">
+      <h2>Capítulo III: La Decisión</h2>
+      <p>Después de semanas de silencio, de pensamientos enredados como raíces bajo tierra, el Forastero finalmente comprendió que la espera no era calma… era miedo disfrazado. Y decidió moverse. No porque tuviera certezas, sino porque comprendió que seguir dudando era igual a quedarse muerto en vida.</p>
+      <p>Tomó su maleta. Pero no cargó con ropa, ni provisiones, ni objetos que el mundo dijera necesarios. En esa maleta guardó recuerdos, sí… pero recuerdos a la mitad. Rostros incompletos, palabras que nunca se dijeron, cicatrices que todavía dolían pero ya no sangraban.</p>
+      <p>Abrió la puerta de la cabaña. El paisaje era el mismo: gris, sin forma, sin promesas. Aun así, respiró hondo… como si el aire lo pudiera llenar de impulso. Dio un paso. Y en ese primer movimiento, el bosque reaccionó: una bandada de cuervos salió volando desde las ramas, gritando con fuerza, como si su alma también gritara.</p>
+      <p>El Forastero caminó rumbo a lo desconocido. No con certezas, sino con intención. El eco de sus pasos se mezclaba con el chillido de los cuervos, y por primera vez el ruido no era confusión, era música. Era anuncio. Era camino.</p>
+      <p><em>“A veces, el ruido más fuerte no viene de afuera, sino del coraje de seguir cuando todo dentro quiere rendirse.”</em></p>
+      <div class="chapter-footer">Archivo: Entrada III</div>
+    </div>
+   </div>
 
   <script>
     const paginas = document.querySelectorAll('.pagina');
