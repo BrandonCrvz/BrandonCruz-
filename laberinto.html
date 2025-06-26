@@ -105,18 +105,23 @@
 
 .boton-bleex span {
   position: absolute;
-  bottom: 0;
+  top: 0;                    /* Cubre todo el botón desde arriba */
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  height: 100%;              /* Cubre todo el botón */
+  background: rgba(0, 0, 0, 0.65); /* Fondo negro semi-transparente */
+  color: #ff4fa3;            /* Color neón suave */
   text-align: center;
-  padding: 8px;              /* Un poco más delgado para la altura nueva */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
   box-sizing: border-box;
+  border-radius: 18px;       /* Igual que el botón */
+  text-shadow: 0 0 4px #ff4fa388, 0 0 8px #ff4fa344; /* Neón suave */
 }
 
 .boton-bleex:hover span {
