@@ -2,155 +2,147 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forasteros - Puerta Mental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forasteros - Mantenimiento</title>
   <style>
     /* Fuente misteriosa */
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-    body.login {
+    /* Fondo inspirado en Bleex: oscuro con texturas rojas y humo */
+    body {
       margin: 0;
-      padding: 0;
+      height: 100vh;
+      background: 
+        radial-gradient(ellipse at center, #0a0000 0%, #000000 80%),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      position: relative;
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at center, #000000 0%, #0b0b0b 100%);
       color: #ff1f44;
       overflow: hidden;
-    }
-
-    audio {
-      display: none;
-    }
-
-    .login-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .titulo {
-      font-size: 3rem;
-      color: #ff003c;
-      text-shadow: 0 0 20px #ff003c, 0 0 40px #ff003c;
-      margin-bottom: 10px;
-    }
-
-    .subtitulo {
-      font-size: 1.2rem;
-      color: #ffffffcc;
-      margin-bottom: 5px;
-      text-shadow: 0 0 5px #ff003c;
-    }
-
-    .login-form {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 280px;
-    }
-
-    .login-form input {
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-      box-shadow: 0 0 10px #ff003c80;
-    }
-
-    .login-form button {
-      padding: 12px;
-      background-color: #ff003c;
-      border: none;
-      border-radius: 4px;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 1rem;
-      text-transform: uppercase;
-      box-shadow: 0 0 15px #ff003c, 0 0 30px #ff003c;
-      transition: background 0.3s ease;
-    }
-
-    .login-form button:hover {
-      background-color: #b8002d;
-    }
-
-    .social-buttons {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .social-button {
-      display: flex;
       align-items: center;
-      gap: 10px;
-      background: #111;
-      padding: 10px 15px;
-      border-radius: 6px;
-      color: #fff;
-      text-decoration: none;
-      box-shadow: 0 0 10px #ff003c80;
-      transition: background 0.3s ease;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    .social-button:hover {
-      background: #2a000e;
+    /* Overlay rojo transparente para dar tono */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255, 31, 68, 0.5), rgba(10, 0, 0, 0.85));
+      z-index: 0;
     }
 
-    .social-button img {
-      width: 24px;
-      height: 24px;
+    /* Contenedor principal */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Texto principal neón rojo grande con movimiento */
+    .main-text {
+      font-size: clamp(3rem, 10vw, 8rem);
+      color: #ff003c;
+      text-shadow:
+        0 0 10px #ff003c,
+        0 0 20px #ff003c,
+        0 0 30px #ff003c,
+        0 0 40px #ff1f44,
+        0 0 70px #ff1f44,
+        0 0 80px #ff1f44,
+        0 0 100px #ff1f44;
+      font-weight: 700;
+      animation: pulseMove 3s ease-in-out infinite alternate;
+      letter-spacing: 0.15em;
+      user-select: none;
+    }
+
+    @keyframes pulseMove {
+      0% {
+        text-shadow:
+          0 0 10px #ff003c,
+          0 0 20px #ff003c,
+          0 0 30px #ff003c,
+          0 0 40px #ff1f44,
+          0 0 70px #ff1f44,
+          0 0 80px #ff1f44,
+          0 0 100px #ff1f44;
+        transform: translateX(0);
+      }
+      50% {
+        text-shadow:
+          0 0 20px #ff0066,
+          0 0 40px #ff0066,
+          0 0 60px #ff1f44,
+          0 0 80px #ff1f44,
+          0 0 100px #ff1f44,
+          0 0 140px #ff1f44,
+          0 0 180px #ff1f44;
+        transform: translateX(15px);
+      }
+      100% {
+        text-shadow:
+          0 0 10px #ff003c,
+          0 0 20px #ff003c,
+          0 0 30px #ff003c,
+          0 0 40px #ff1f44,
+          0 0 70px #ff1f44,
+          0 0 80px #ff1f44,
+          0 0 100px #ff1f44;
+        transform: translateX(0);
+      }
+    }
+
+    /* Apartado de detalles abajo */
+    .details {
+      margin-top: 50px;
+      font-size: 1rem;
+      color: #ff003ccc;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(20, 0, 0, 0.6);
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow:
+        0 0 10px #ff003c99;
+      user-select: none;
+      line-height: 1.5;
+    }
+
+    .details strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #ff0044;
+      text-shadow: 0 0 5px #ff0044;
+    }
+
+    /* Lista de detalles */
+    .details ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
     }
   </style>
 </head>
-<body class="login">
-  <audio autoplay loop>
-    <source src="assets/artefactos/fuego.mp3" type="audio/mpeg" />
-    Tu navegador no soporta audio HTML5.
-  </audio>
-
-  <div class="login-container">
-    <h1 class="titulo">FORASTEROS</h1>
-    <p class="subtitulo">°•|•° bien venidos a la puerta °•|•°</p>
-    <p class="subtitulo">¿Listo para entrar en tu propia mente?</p>
-
-    <form class="login-form" onsubmit="return verificarContraseña(event)">
-      <input type="text" name="username" placeholder="Tu nombre forastero" required />
-      <input type="password" id="password" placeholder="Llave de 5 espigas" required />
-      <button type="submit">abrir puerta</button>
-    </form>
-
-    <div class="social-buttons">
-      <a href="https://open.spotify.com/artist/4wJyPVcdfycCaQY3xOC2SN?si=cMGapecqR46KQNLGqJ_IFg" target="_blank" class="social-button">
-        <img src="assets/artefactos/spotify-icon.png" alt="Spotify">
-        <span>escucha mi música en Spotify, acompaña al forastero</span>
-      </a>
-      <a href="https://youtube.com/@brandooncruz?si=ZH6-fdlezRQQXU_k" target="_blank" class="social-button">
-        <img src="assets/artefactos/youtube-icon.png" alt="YouTube">
-        <span>explora mi universo en YouTube</span>
-      </a>
-    </div>
+<body>
+  <div class="container">
+    <h1 class="main-text">PÁGINA EN MANTENIMIENTO</h1>
+    <section class="details" aria-label="Detalles de mantenimiento">
+      <strong>Detalles:</strong>
+      <ul>
+        <li>1.Eliminación del chat con Bleex</li>
+        <li>2.Actualización del botón de radio</li>
+        <li>3.Incorporación del libro "Zona Cero"</li>
+      </ul>
+    </section>
   </div>
-
-  <script>
-    function verificarContraseña(event) {
-      event.preventDefault();
-      const password = document.getElementById("password").value;
-      if (password === "Bleex") {
-        window.location.href = "laberinto.html";
-      } else {
-        alert("Llave incorrecta. La puerta no se abrirá.");
-      }
-    }
-  </script>
 </body>
 </html>
