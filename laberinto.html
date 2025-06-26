@@ -39,8 +39,12 @@
   background: rgba(20, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0 0 20px #9a0033;
-  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .bio-card img {
   width: 180px;
@@ -50,15 +54,14 @@
   box-shadow: 0 0 12px #ff4fa3;
   border: 2px solid #ff4fa3;
   background: #440022;
-  margin: auto;
-  display: block;
+  margin-bottom: 20px;
 }
 .bio-card p {
   color: #f0c1dc;
   font-size: 1.05rem;
   line-height: 1.5;
   max-width: 800px;
-  margin: 20px auto 0;
+  text-align: justify;
 }
 
 /* Sección botones */
@@ -153,35 +156,44 @@
   <div class="bio-card">
     <img src="assets/artefactos/bleex.jpg" alt="Bleex" />
     <h2>Bleex</h2>
-    <p>Bleex es una sombra constante dentro de la mente del Forastero, una presencia oscura que representa la duda, el caos y la autodestrucción. No es simplemente un enemigo externo, sino una voz interna, un eco de miedo que se alimenta de las inseguridades y los traumas más profundos.  
-      <br/><br/>  
-      Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.  
-      <br/><br/>  
-      Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.  </p>
+    <p>Bleex es una sombra constante dentro de la mente del Forastero, una presencia oscura que representa la duda, el caos y la autodestrucción. No es simplemente un enemigo externo, sino una voz interna, un eco de miedo que se alimenta de las inseguridades y los traumas más profundos.
+    <br/><br/>
+    Su influencia distorsiona la realidad y fragmenta la conciencia, creando laberintos mentales donde el Forastero se pierde una y otra vez. Aunque su esencia es oscura y perturbadora, Bleex también simboliza la lucha necesaria para confrontar los demonios internos y buscar la sanación.
+    <br/><br/>
+    Su figura es indefinida, como un susurro o un reflejo borroso, y su presencia se siente más fuerte en momentos de crisis o debilidad. En la narrativa del Proyecto Bleex, Bleex es la sombra que el Forastero debe enfrentar para encontrar la luz que aún habita en su interior.</p>
   </div>
   <div class="bio-card">
     <img src="assets/artefactos/forastero.jpg" alt="Forastero" />
     <h2>Forastero</h2>
-    <p>El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.  
-      <br/><br/>  
-      Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.  
-      <br/><br/>  
-      En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.  
-      <br/><br/>  
-      Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser.  </p>
+    <p>El Forastero es un alma fragmentada, un viajero atrapado dentro de su propia mente, donde la realidad y la ilusión se entrelazan en un laberinto sin salida clara. Antes de que Bleex apareciera, era alguien completo, con sueños y esperanzas intactas, pero ahora vive en una batalla constante contra las voces que amenazan con destruir su esencia.
+    <br/><br/>
+    Su viaje es una búsqueda desesperada de sentido y paz interior, un intento por encontrar el “Fragmento del Centro” que aún brilla dentro de él, aunque tenue y frágil. Es alguien marcado por heridas invisibles, cicatrices que solo él puede sentir, pero también por una resiliencia profunda que lo impulsa a seguir adelante.
+    <br/><br/>
+    En su mundo, cada decisión se siente como un paso en un campo minado, y cada recuerdo es una puerta hacia la claridad o el olvido. A pesar de la confusión y el miedo, el Forastero busca aferrarse a los artefactos que lo conectan con su verdadero yo, símbolos de valentía, intuición y resistencia.
+    <br/><br/>
+    Su historia es la de todos aquellos que luchan con sus demonios internos, que caminan en la línea difusa entre la luz y la sombra, intentando reconciliarse con lo que fueron, lo que son y lo que podrían llegar a ser.</p>
   </div>
   <div class="bio-card">
     <img src="assets/artefactos/fucsia_amanecer.jpg" alt="Fucsia Amanecer" />
     <h2>Los del Fucsia Amanecer</h2>
-    <p>Los del Fucsia Amanecer son aquellos que han despertado [...]</p>
+    <p>Los del Fucsia Amanecer son aquellos que han despertado entre sombras y luces, quienes escuchan más allá del ruido y buscan respuestas en la música, las palabras y los silencios. Son viajeros de mundos internos, guardianes de secretos que solo se revelan en el borde entre el sueño y la vigilia.
+    <br/><br/>
+    No son simples oyentes, son compañeros en la travesía del Forastero, almas que han sentido el eco de Bleex en sus propias mentes y han decidido no rendirse. En el fucsia del amanecer, encuentran esperanza y fuerza, una promesa de renacer incluso cuando la oscuridad parece eterna.
+    <br/><br/>
+    Son rebeldes emocionales, creadores de su propio camino, y con cada escucha se sumergen más profundo en el laberinto mental, explorando sus propias dudas, miedos y sueños. En su esencia reside la valentía de mirar hacia dentro y transformar el caos en claridad.
+    <br/><br/>
+    Los del Fucsia Amanecer no están solos. Forman una comunidad invisible, un vínculo silencioso que trasciende lo audible, y que mantiene viva la luz entre las grietas del pensamiento.</p>
   </div>
   <div class="bio-card">
     <img src="assets/artefactos/mapa.jpg" alt="Mapa" style="width: 100%; max-width: 600px; height: auto;" />
     <h2>Mapa</h2>
-    <p>Este mapa no tiene rumbo ni dirección clara [...]</p>
+    <p>Este mapa no tiene rumbo ni dirección clara. Sus líneas cambian, se desvanecen o aparecen según quien lo observe. Solo aquel que haya despertado entre sombras y comprenda el eco del caos podrá leerlo realmente.
+    <br/><br/>
+    Es más que un dibujo: es un reflejo del laberinto interior, una guía muda que revela caminos al alma que se atreva a buscar su verdad.</p>
   </div>
 </div>
 
+<!-- resto igual -->
 <!-- BOTONES -->
 <div class="seccion-botones">
   <a href="artefactos.html" class="boton-bleex">
