@@ -26,28 +26,31 @@
       margin-bottom: 10px;
       text-shadow: 0 0 6px #ff4fa3;
     }/* Sección biografías */
- .seccion-biografias {
-  display: flex;
-  flex-direction: row;         /* ¡IMPORTANTE! para scroll horizontal */
-  overflow-x: auto;            /* Habilita el scroll horizontal */
+    .seccion-biografias {
+  overflow-x: auto;
+  white-space: nowrap;
   scroll-snap-type: x mandatory;
+  display: flex;
   gap: 20px;
   padding: 20px 0;
-  white-space: nowrap;         /* Esto ayuda a que no se acomoden verticalmente */  
-}
+    }
 .bio-card {
   scroll-snap-align: start;
   background: rgba(20, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0 0 20px #9a0033;
-  min-width: 90vw;            /* Esto hace que cada tarjeta ocupe casi toda la pantalla */
+  min-width: 90vw;            /* Ocupa casi toda la pantalla */
   max-width: 90vw;
-  flex-shrink: 0;             /* Evita que se reduzcan si el espacio es pequeño */
+  flex-shrink: 0;             /* No se encoge en scroll */
   padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;               /* Deja que crezca en altura si el texto es largo */
+  overflow-wrap: break-word; /* Hace que las palabras largas salten */
+  word-break: break-word;
 }
+
 .bio-card img {
   width: 180px;
   height: 180px;
@@ -58,14 +61,17 @@
   background: #440022;
   margin-bottom: 20px;
 }
+
 .bio-card p {
   color: #f0c1dc;
   font-size: 1.05rem;
   line-height: 1.5;
-  max-width: 100px;
-  text-align: normal;
+  max-width: 90%;               /* Usa casi todo el ancho disponible de la tarjeta */
+  text-align: justify;          /* Alineado bonito */
+  white-space: normal;          /* Permite saltos de línea */
+  overflow-wrap: break-word;    /* Asegura que se rompa el texto en palabras largas */
+  word-break: break-word;
 }
-
 /* Sección botones */
 .seccion-botones {
   overflow-x: auto;
