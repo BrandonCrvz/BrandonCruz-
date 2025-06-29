@@ -6,13 +6,19 @@
   <title>2026</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Fondo con neblina animada */
     body {
-      background: linear-gradient(135deg, #1a001a, #330033);
+      background: linear-gradient(135deg, #1a001a, #330033), url("assets/artefactos/neblina.gif");
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: darken;
       color: #eee;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
       text-align: center;
     }
+
+    /* Contenedor con animación de entrada */
     .container {
       background: rgba(40, 0, 40, 0.7);
       padding: 30px;
@@ -20,28 +26,69 @@
       box-shadow: 0 0 20px #ff4fa3;
       max-width: 800px;
       margin: auto;
+      animation: aparecer 2s ease-in-out forwards;
+      opacity: 0;
     }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Símbolo animado */
     h1 {
       color: #ff4fa3;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      font-size: 3em;
+      animation: flotar 3s ease-in-out infinite;
+      letter-spacing: 10px;
     }
+
+    @keyframes flotar {
+      0%, 100% {
+        transform: translateY(0px);
+        text-shadow: 0 0 10px #ff4fa3, 0 0 20px #ff4fa3;
+      }
+      50% {
+        transform: translateY(-10px);
+        text-shadow: 0 0 20px #ff4fa3, 0 0 30px #ff1f88;
+      }
+    }
+
+    /* Imagen */
     .imagen {
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 0 12px #ff4fa3;
       margin-bottom: 30px;
     }
+
+    /* Video */
     video {
       width: 100%;
       max-width: 700px;
       border-radius: 12px;
       box-shadow: 0 0 15px #ff4fa3;
     }
+
+    /* Frase narrativa */
+    .frase {
+      color: #ccc;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>°•|•°</h1>
+    <p class="frase">"Este no es un mensaje... es una advertencia."</p>
     <img src="assets/artefactos/neblina.jpg" alt="Imagen en la Neblina" class="imagen" />
     <video controls>
       <source src="assets/artefactos/mensaje.mp4" type="video/mp4">
