@@ -6,9 +6,8 @@
   <title>2026</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Fondo con neblina animada */
     body {
-      background: linear-gradient(135deg, #1a001a, #330033), url("assets/artefactos/neblina.gif");
+      background: linear-gradient(135deg, #1a001a, #330033);
       background-size: cover;
       background-attachment: fixed;
       background-blend-mode: darken;
@@ -18,7 +17,6 @@
       text-align: center;
     }
 
-    /* Contenedor con animación de entrada */
     .container {
       background: rgba(40, 0, 40, 0.7);
       padding: 30px;
@@ -41,7 +39,6 @@
       }
     }
 
-    /* Símbolo animado */
     h1 {
       color: #ff4fa3;
       margin-bottom: 10px;
@@ -61,27 +58,32 @@
       }
     }
 
-    /* Imagen */
-    .imagen {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #ff4fa3;
-      margin-bottom: 30px;
-    }
-
-    /* Video */
-    video {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #ff4fa3;
-    }
-
-    /* Frase narrativa */
     .frase {
       color: #ccc;
       font-style: italic;
       margin-bottom: 25px;
+    }
+
+    .video-anuncio {
+      margin: 30px 0;
+    }
+
+    .contador-section {
+      margin-top: 40px;
+    }
+
+    .contador-title {
+      font-size: 1.3em;
+      color: #ff4fa3;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .contador {
+      font-size: 2em;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ff4fa3;
     }
   </style>
 </head>
@@ -89,11 +91,46 @@
   <div class="container">
     <h1>°•|•°</h1>
     <p class="frase">"Este no es un mensaje... es una advertencia."</p>
-    <img src="assets/artefactos/neblina.jpg" alt="Imagen en la Neblina" class="imagen" />
-    <video controls>
-      <source src="assets/artefactos/mensaje.mp4" type="video/mp4">
-      Tu navegador no soporta el video.
-    </video>
+
+    <div class="video-anuncio">
+      <!-- Aquí insertas tu video promocional -->
+      <video controls>
+        <source src="assets/artefactos/anuncio-cancion.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <div class="contador-section">
+      <div class="contador-title">Estamos cerca de la puerta cerrada.</div>
+      <div id="countdown" class="contador">Cargando...</div>
+    </div>
   </div>
+
+  <script>
+    // Fecha objetivo: 1 mes desde hoy
+    const targetDate = new Date();
+    targetDate.setMonth(targetDate.getMonth() + 1); // 1 mes adelante
+
+    function actualizarContador() {
+      const ahora = new Date().getTime();
+      const distancia = targetDate - ahora;
+
+      if (distancia <= 0) {
+        document.getElementById("countdown").innerHTML = "Ya está aquí.";
+        return;
+      }
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    setInterval(actualizarContador, 1000);
+    actualizarContador();
+  </script>
 </body>
 </html>
