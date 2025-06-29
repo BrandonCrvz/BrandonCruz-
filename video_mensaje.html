@@ -68,6 +68,14 @@
       margin: 30px 0;
     }
 
+    .video-anuncio video {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff4fa3;
+    }
+
     .contador-section {
       margin-top: 40px;
     }
@@ -93,7 +101,6 @@
     <p class="frase">"Este no es un mensaje... es una advertencia."</p>
 
     <div class="video-anuncio">
-      <!-- Aquí insertas tu video promocional -->
       <video controls>
         <source src="assets/artefactos/anuncio-cancion.mp4" type="video/mp4">
         Tu navegador no soporta el video.
@@ -109,7 +116,7 @@
   <script>
     // Fecha objetivo: 1 mes desde hoy
     const targetDate = new Date();
-    targetDate.setMonth(targetDate.getMonth() + 1); // 1 mes adelante
+    targetDate.setMonth(targetDate.getMonth() + 1);
 
     function actualizarContador() {
       const ahora = new Date().getTime();
