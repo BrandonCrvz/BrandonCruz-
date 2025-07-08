@@ -80,11 +80,10 @@
       margin-top: 40px;
     }
 
-    .contador-title {
-      font-size: 1.3em;
+    .fecha-fija {
+      font-size: 1.2em;
       color: #ff4fa3;
       margin-bottom: 10px;
-      font-weight: bold;
     }
 
     .contador {
@@ -108,15 +107,14 @@
     </div>
 
     <div class="contador-section">
-      <div class="contador-title">Estamos cerca de la puerta cerrada.</div>
+      <div class="fecha-fija">2 de agosto del 2025</div>
       <div id="countdown" class="contador">Cargando...</div>
     </div>
   </div>
 
   <script>
-    // Fecha objetivo: 1 mes desde hoy
-    const targetDate = new Date();
-    targetDate.setMonth(targetDate.getMonth() + 1);
+    // Fecha de destino fija: 2 de agosto de 2025 a las 00:00:00
+    const targetDate = new Date("2025-08-02T00:00:00");
 
     function actualizarContador() {
       const ahora = new Date().getTime();
