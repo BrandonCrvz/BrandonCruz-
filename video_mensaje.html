@@ -64,18 +64,6 @@
       margin-bottom: 25px;
     }
 
-    .video-anuncio {
-      margin: 30px 0;
-    }
-
-    .video-anuncio video {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #ff4fa3;
-    }
-
     .contador-section {
       margin-top: 40px;
     }
@@ -92,29 +80,67 @@
       letter-spacing: 2px;
       text-shadow: 0 0 10px #ff4fa3;
     }
+
+    .mensaje-neon {
+      margin-top: 60px;
+    }
+
+    .titulo-neon {
+      font-size: 2.5em;
+      color: #ff4fa3;
+      animation: palpitar 1.5s infinite;
+      text-shadow: 0 0 10px #ff4fa3, 0 0 20px #ff4fa3;
+    }
+
+    .subtitulo-neon {
+      font-size: 1.2em;
+      color: #fff;
+      margin-top: 10px;
+      font-style: italic;
+      animation: palpitar-sub 2s infinite;
+      text-shadow: 0 0 8px #ff1f88, 0 0 16px #ff1f88;
+    }
+
+    @keyframes palpitar {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes palpitar-sub {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>°•|•°</h1>
-    <p class="frase">"Este no es un mensaje... es una advertencia."</p>
+    <p class="frase">"advertencia."</p>
 
-    <div class="video-anuncio">
-      <video controls>
-        <source src="assets/artefactos/anuncio-cancion.mp4" type="video/mp4">
-        Tu navegador no soporta el video.
-      </video>
+    <div class="mensaje-neon">
+      <div class="titulo-neon">La puerta fue abierta</div>
+      <div class="subtitulo-neon">Es momento de escuchar el próximo movimiento</div>
     </div>
 
     <div class="contador-section">
-      <div class="fecha-fija">2 de agosto del 2025</div>
+      <div class="fecha-fija">2 de septiembre del 2025</div>
       <div id="countdown" class="contador">Cargando...</div>
     </div>
   </div>
 
   <script>
-    // Fecha de destino fija: 2 de agosto de 2025 a las 00:00:00
-    const targetDate = new Date("2025-08-02T00:00:00");
+    // Fecha de destino: 2 de septiembre de 2025 a las 00:00:00
+    const targetDate = new Date("2025-09-02T00:00:00");
 
     function actualizarContador() {
       const ahora = new Date().getTime();
